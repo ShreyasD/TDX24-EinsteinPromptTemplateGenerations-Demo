@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <assignments>
+        <name>Add_Case_Details</name>
+        <elementSubtype>AddPromptInstructions</elementSubtype>
+        <label>Add Case Details</label>
+        <locationX>176</locationX>
+        <locationY>242</locationY>
+        <assignmentItems>
+            <assignToReference>$Output.Prompt</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>Case Subject: {!Selected_Case.Subject}
+Case Description:{!Selected_Case.Description}
+Case Status:{!Selected_Case.Status}
+Case Reason:{!Selected_Case.Reason}
+Case Opened:{!Selected_Case.CreatedDate}
+Case Contact:{!Selected_Case.Contact.Name}
+Case Contact Title:{!Selected_Case.Contact.Title}
+</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Get_Case_Comments</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Case_Comment</name>
+        <elementSubtype>AddPromptInstructions</elementSubtype>
+        <label>Case Comment</label>
+        <locationX>264</locationX>
+        <locationY>566</locationY>
+        <assignmentItems>
+            <assignToReference>$Output.Prompt</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>Comment Body:{!Loop_over_all_Comments.CommentBody}
+Comment Date: {!Loop_over_all_Comments.CreatedDate}
+</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_over_all_Comments</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Case_Feed_Item</name>
+        <elementSubtype>AddPromptInstructions</elementSubtype>
+        <label>Case Feed Item</label>
+        <locationX>264</locationX>
+        <locationY>974</locationY>
+        <assignmentItems>
+            <assignToReference>$Output.Prompt</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>Item Body: {!Loop_over_Case_Feed.Body}
+Item Title: {!Loop_over_Case_Feed.Title}
+Item Type: {!Loop_over_Case_Feed.Type}
+Created Date: {!Loop_over_Case_Feed.CreatedDate}
+</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_over_Case_Feed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>End_Json</name>
+        <elementSubtype>AddPromptInstructions</elementSubtype>
+        <label>End Json</label>
+        <locationX>176</locationX>
+        <locationY>1166</locationY>
+        <assignmentItems>
+            <assignToReference>$Output.Prompt</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>{!End_Json}
+</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <environments>Default</environments>
+    <interviewLabel>Case Comment And Feed Summary {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Case Comment And Feed Summary</label>
+    <loops>
+        <name>Loop_over_all_Comments</name>
+        <label>Loop over all Comments</label>
+        <locationX>176</locationX>
+        <locationY>458</locationY>
+        <collectionReference>Get_Case_Comments</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Case_Comment</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Get_Case_Feed</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <name>Loop_over_Case_Feed</name>
+        <label>Loop over Case Feed</label>
+        <locationX>176</locationX>
+        <locationY>866</locationY>
+        <collectionReference>Get_Case_Feed</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Case_Feed_Item</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>End_Json</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>PromptFlow</processType>
+    <recordLookups>
+        <name>Get_Case_Comments</name>
+        <label>Get Case Comments</label>
+        <locationX>176</locationX>
+        <locationY>350</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Loop_over_all_Comments</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>ParentId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Selected_Case.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>CaseComment</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Case_Feed</name>
+        <label>Get Case Feed</label>
+        <locationX>176</locationX>
+        <locationY>758</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Loop_over_Case_Feed</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>ParentId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Selected_Case.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>CaseFeed</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Selected_Case</name>
+        <label>Selected Case</label>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Add_Case_Details</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Selected_Case.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Case</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Selected_Case</targetReference>
+        </connector>
+        <triggerType>Capability</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

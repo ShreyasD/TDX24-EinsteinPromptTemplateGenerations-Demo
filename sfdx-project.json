@@ -1,0 +1,13 @@
+{
+  "packageDirectories": [
+      { 
+            "path": "force-app", 
+            "default": true,
+            "definitionFile": "config/project-scratch-def.json"
+      }
+  ],
+  "name": "trailblazerdx-Einstein-LLM-Gateway-Demo",
+  "namespace": "",
+  "sfdcLoginUrl": "https://login.salesforce.com",
+  "sourceApiVersion": "59.0"
+}

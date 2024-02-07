@@ -1,0 +1,11 @@
+<template>
+    <div class="slds-p-around_x-small">
+        <lightning-textarea 
+            name="caseInteractionSummaryInput" 
+            value={caseInteractionSummaryValue} 
+            label="Case Interaction Summary" 
+            lwc:if={caseInteractionSummaryValue}>
+        </lightning-textarea>
+        <lightning-spinner alternative-text="Loading" size="small" lwc:else></lightning-spinner>
+    </div>
+</template>

@@ -1,0 +1,7 @@
+{
+  "orgName": "sdhond company",
+  "edition": "Enterprise",
+  "features": ["EinsteinGPT", "EinsteinHawkingC2CEnabled","EinsteinGPTPlatform"],
+    "settings": {
+  }
+}
