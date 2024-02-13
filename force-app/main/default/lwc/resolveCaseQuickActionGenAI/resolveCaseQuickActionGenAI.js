@@ -1,8 +1,8 @@
 import { LightningElement, api, track } from 'lwc';
 import ResolveCaseVerifyDetails from 'c/resolveCaseVerifyDetails';
-import ResolveCaseInteractionSummary from 'c/resolveCaseInteractionSummary';
+import ResolveCaseInteractionSummary from 'c/resolveCaseInteractionSummaryGenAI';
 
-export default class ResolveCaseQuickAction extends LightningElement {
+export default class ResolveCaseQuickActionGenAI extends LightningElement {
     @api recordId;
 
     //Wizard Status

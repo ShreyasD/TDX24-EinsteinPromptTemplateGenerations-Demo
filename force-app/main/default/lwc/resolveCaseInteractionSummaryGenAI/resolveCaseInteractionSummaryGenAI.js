@@ -2,7 +2,7 @@ import { LightningElement, api } from 'lwc';
 import { ShowToastEvent } from "lightning/platformShowToastEvent";
 import generatePromptResponse from '@salesforce/apex/PromptUtility.generatePromptResponse';
 
-export default class ResolveCaseInteractionSummary extends LightningElement {
+export default class ResolveCaseInteractionSummaryGenAI extends LightningElement {
     @api recordId;
     caseInteractionSummaryValue = "";
 
@@ -24,7 +24,7 @@ export default class ResolveCaseInteractionSummary extends LightningElement {
                 console.log("error: " + JSON.stringify(error));
                 const evt = new ShowToastEvent({
                     title: "ERROR",
-                    message: this.error.exceptionType + ": " + this.error.message,
+                    message: this.error.message,
                     variant: "error"
                 });
             });

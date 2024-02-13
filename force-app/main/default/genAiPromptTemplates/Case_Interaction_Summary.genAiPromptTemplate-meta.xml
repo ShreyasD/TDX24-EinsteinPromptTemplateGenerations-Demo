@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersion>2</activeVersion>
+    <description>Prompt template to generate a case summary.</description>
+    <developerName>Case_Interaction_Summary</developerName>
+    <masterLabel>Case Interaction Summary</masterLabel>
+    <relatedEntity>Case</relatedEntity>
+    <templateVersions>
+        <content>You are a support agent tasked with providing a detailed summary of any case interactions that have occurred as part of the case resolution.
+
+&quot;&quot;&quot;
+Case Details:
+{!$Flow:Case_Comment_And_Feed_Summary.Prompt}
+&quot;&quot;&quot;
+
+Based on the case details provide a detailed summary of the case. Highlight specific positive and negative interactions from the case comments and case history.
+</content>
+        <inputs>
+            <apiName>objectToSummarize</apiName>
+            <definition>SOBJECT://Case</definition>
+            <referenceName>Input:Case</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT35Turbo</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>flow://Case_Comment_And_Feed_Summary</definition>
+            <parameters>
+                <definition>SOBJECT://Case</definition>
+                <isRequired>true</isRequired>
+                <parameterName>objectToSummarize</parameterName>
+                <valueExpression>{!$Input:Case}</valueExpression>
+            </parameters>
+            <referenceName>Flow:Case_Comment_And_Feed_Summary</referenceName>
+        </templateDataProviders>
+        <versionNumber>1</versionNumber>
+    </templateVersions>
+    <templateVersions>
+        <content>You are a support agent tasked with providing a detailed summary of any case interactions that have occurred as part of the case resolution.
+
+&quot;&quot;&quot;
+Case Details:
+{!$Flow:Case_Comment_And_Feed_Summary.Prompt}
+&quot;&quot;&quot;
+
+Based on the case details provide a detailed summary of the case. Highlight specific positive and negative interactions from the case comments and case history.
+</content>
+        <inputs>
+            <apiName>objectToSummarize</apiName>
+            <definition>SOBJECT://Case</definition>
+            <referenceName>Input:Case</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT35Turbo</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>flow://Case_Comment_And_Feed_Summary</definition>
+            <parameters>
+                <definition>SOBJECT://Case</definition>
+                <isRequired>true</isRequired>
+                <parameterName>objectToSummarize</parameterName>
+                <valueExpression>{!$Input:Case}</valueExpression>
+            </parameters>
+            <referenceName>Flow:Case_Comment_And_Feed_Summary</referenceName>
+        </templateDataProviders>
+        <versionNumber>2</versionNumber>
+    </templateVersions>
+    <type>einstein_gpt__recordSummary</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>

@@ -144,7 +144,7 @@ Created Date: {!Loop_over_Case_Feed.CreatedDate}
             <field>ParentId</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>Selected_Case.Id</elementReference>
+                <elementReference>$Input.objectToSummarize.Id</elementReference>
             </value>
         </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
@@ -165,7 +165,7 @@ Created Date: {!Loop_over_Case_Feed.CreatedDate}
             <field>ParentId</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>Selected_Case.Id</elementReference>
+                <elementReference>$Input.objectToSummarize.Id</elementReference>
             </value>
         </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
@@ -186,7 +186,7 @@ Created Date: {!Loop_over_Case_Feed.CreatedDate}
             <field>Id</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>Selected_Case.Id</elementReference>
+                <elementReference>$Input.objectToSummarize.Id</elementReference>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>

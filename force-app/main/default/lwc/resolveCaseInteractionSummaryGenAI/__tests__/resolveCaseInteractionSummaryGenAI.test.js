@@ -1,5 +1,5 @@
 import { createElement } from 'lwc';
-import ResolveCaseInteractionSummary from 'c/resolveCaseInteractionSummary';
+import ResolveCaseInteractionSummary from 'c/resolveCaseInteractionSummaryGenAI';
 
 describe('c-resolve-case-interaction-summary', () => {
     afterEach(() => {
