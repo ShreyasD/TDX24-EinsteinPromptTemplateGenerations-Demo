@@ -1,3 +1,0 @@
-global class IndustriesCommonEnumHelpers {
-
-}
