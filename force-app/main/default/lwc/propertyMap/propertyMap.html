@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title={address} icon-name="custom:custom106">
+        <template lwc:if={markers}>
+            <lightning-map
+                map-markers={markers}
+                zoom-level={zoomLevel}
+            ></lightning-map>
+            <template lwc:if={error}>
+                <c-error-panel
+                    friendly-message="Error retrieving map"
+                    errors={error}
+                ></c-error-panel>
+            </template>
+        </template>
+        <template lwc:else>
+            <c-error-panel
+                friendly-message="Select a property to see its location"
+            ></c-error-panel>
+        </template>
+    </lightning-card>
+</template>

@@ -1,0 +1,55 @@
+<template>
+    <lightning-modal-header label="Properties of Interest Email"></lightning-modal-header>
+    <lightning-modal-body>
+        <div class="slds-progress">
+            <ol class="slds-progress__list">
+                <template for:each={wizardSteps} for:item="step">
+                    <template lwc:if={step.isComplete}>
+                        <li key={step.title} class="slds-progress__item slds-is-completed">
+                            <button class="slds-button slds-button_icon slds-progress__marker slds-progress__marker_icon" title="Step 1 - Completed">
+                              <svg class="slds-button__icon" aria-hidden="true">
+                                <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#success"></use>
+                              </svg>
+                              <span class="slds-assistive-text">{step.title}</span>
+                            </button>
+                        </li>
+                    </template>
+                    <template lwc:elseif={step.isCurrentStep}>
+                        <li key={step.title} class="slds-progress__item slds-is-active">
+                            <button class="slds-button slds-progress__marker">
+                              <span class="slds-assistive-text">{step.title}</span>
+                            </button>
+                        </li>
+                    </template>
+                    <template lwc:else>
+                        <li key={step.title} class="slds-progress__item">
+                            <button class="slds-button slds-progress__marker">
+                                <span class="slds-assistive-text">{step.title}</span>
+                            </button>
+                        </li>
+                    </template>
+                </template>
+            </ol>
+        </div>
+        <div class="slds-m-around_x-small">
+            <lwc:component lwc:is={stepComponent}
+                        lwc:ref="currentStep"
+                        lwc:spread={stepComponentParams}>
+            </lwc:component>
+        </div>
+    </lightning-modal-body>
+    <lightning-modal-footer>
+        <lightning-layout horizontal-align="center" class="slds-m-top_large">
+            <div class="slds-m-top_medium">
+                <lightning-button variant="neutral" name="Previous" 
+                    label="Previous" onclick={handlePrevious} lwc:if={showPrevButton}>
+                </lightning-button>
+            </div>
+            <div class="slds-m-top_medium">
+                <lightning-button variant="brand" name="Next" label="Next" 
+                    onclick={handleNext}>
+                </lightning-button>
+            </div>
+        </lightning-layout>
+    </lightning-modal-footer>
+</template>

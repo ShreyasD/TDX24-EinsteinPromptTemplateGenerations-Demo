@@ -1,0 +1,44 @@
+<template>
+    <lightning-card  title="Properties">
+        <lightning-button 
+            label="Send Listings" 
+            slot="actions" 
+            onclick={handleSendListings}>
+        </lightning-button>
+        <template lwc:if={properties.data}>
+            <div class="slds-var-m-around_small">
+                <lightning-formatted-rich-text 
+                    value={guidanceText}>
+                </lightning-formatted-rich-text>
+            </div>
+            <div class="slds-grid slds-wrap">
+                <template
+                    for:each={properties.data.records}
+                    for:item="property"
+                >
+                    <c-property-tile
+                        property={property}
+                        key={property.Id}
+                        onclicked={handlePropertyClick}
+                        onselected={handlePropertySelected}
+                        class="slds-col slds-var-m-around_xx-small"
+                        data-id={property.Id}
+                    ></c-property-tile>
+                </template>
+            </div>
+            <c-paginator
+                page-number={pageNumber}
+                page-size={pageSize}
+                total-item-count={properties.data.totalItemCount}
+                onprevious={handlePreviousPage}
+                onnext={handleNextPage}
+            ></c-paginator>
+        </template>
+        <template lwc:if={properties.error}>
+            <c-error-panel
+                friendly-message="Error retrieving data"
+                errors={properties.error}
+            ></c-error-panel>
+        </template>
+    </lightning-card>
+</template>

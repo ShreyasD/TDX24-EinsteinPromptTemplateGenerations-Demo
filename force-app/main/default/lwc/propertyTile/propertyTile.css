@@ -1,0 +1,40 @@
+.tile {
+    position: relative;
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.tile.selected {
+    border: 4px #4390df solid;
+}
+.tile.selected:before {
+    content: "\2713";
+    font-size: 35px;
+    color: #fff;
+}
+
+.tile.selected:after {
+    border-top: 28px solid #0080ff;
+    border-left: 28px solid transparent;
+}
+
+.lower-third {
+    position: absolute;
+    /* @sldsValidatorIgnore */
+    bottom: 0;
+    /* @sldsValidatorIgnore */
+    left: 0;
+    /* @sldsValidatorIgnore */
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.truncate {
+    /* @sldsValidatorIgnore */
+    white-space: nowrap;
+    overflow: hidden;
+    /* @sldsValidatorIgnore */
+    text-overflow: ellipsis;
+}

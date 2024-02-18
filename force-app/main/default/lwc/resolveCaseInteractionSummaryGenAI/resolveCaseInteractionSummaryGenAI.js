@@ -1,6 +1,6 @@
 import { LightningElement, api } from 'lwc';
 import { ShowToastEvent } from "lightning/platformShowToastEvent";
-import generatePromptResponse from '@salesforce/apex/PromptUtility.generatePromptResponse';
+import generateMessageFromPromptTemplate from '@salesforce/apex/EinsteinGenAIGatewayService.generateMessageFromPromptTemplate';
 
 export default class ResolveCaseInteractionSummaryGenAI extends LightningElement {
     @api recordId;
@@ -11,11 +11,11 @@ export default class ResolveCaseInteractionSummaryGenAI extends LightningElement
 
         //Request
         let promptRequest = {
-            templateNameOrId: "0hfTC0000001OxxYAE",
+            templateNameOrId: "Case_Interaction_Summary",
             inputMap: {"Input:Case": this.recordId}
         }
 
-        generatePromptResponse({request: promptRequest})
+        generateMessageFromPromptTemplate({request: promptRequest})
             .then((result) => {
                 console.log("result: " + JSON.stringify(result));
                 this.caseInteractionSummaryValue = result.generations[0].text;

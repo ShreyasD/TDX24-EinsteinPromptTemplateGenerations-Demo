@@ -1,0 +1,17 @@
+[
+    {
+        "sobject": "Broker__c",
+        "saveRefs": true,
+        "files": ["brokers-data.json"]
+    },
+    {
+        "sobject": "Property__c",
+        "resolveRefs": true,
+        "files": ["properties-data.json"]
+    },
+    {
+        "sobject": "Contact",
+        "resolveRefs": false,
+        "files": ["contacts-data.json"]
+    }
+]

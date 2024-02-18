@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersion>1</activeVersion>
+    <description>Interested properties email after follow up call with Contact.</description>
+    <developerName>Dreamhouse_Interested_Properties_Contact</developerName>
+    <masterLabel>Dreamhouse Interested Properties Contact</masterLabel>
+    <templateVersions>
+        <content>You are the real estate sales agent at Dreamhouse Realty. Your name is {!$User.Name}. You want to generate an email for our client {!$Input:Contact.Name} for the properties they have showed interest in below in json format. This email is a follow up from the sales call.
+
+[
+{
+  &quot;Thumbnail__c&quot;:&quot;{!$Input:Property1.Thumbnail__c}&quot;,
+  &quot;Location__Longitude__s&quot;:{!$Input:Property1.Location__Longitude__s},
+  &quot;City__c&quot;:&quot;{!$Input:Property1.City__c}&quot;,
+  &quot;Description__c&quot;:&quot;{!$Input:Property1.Description__c}&quot;,
+  &quot;Baths__c&quot;:{!$Input:Property1.Baths__c},
+  &quot;Price__c&quot;:{!$Input:Property1.Price__c},
+  &quot;Beds__c&quot;:{!$Input:Property1.Beds__c},
+  &quot;Location__Latitude__s&quot;:{!$Input:Property1.Location__Latitude__s},
+  &quot;State__c&quot;:&quot;{!$Input:Property1.State__c}&quot;,
+  &quot;Name&quot;:&quot;{!$Input:Property1.Name}&quot;,
+  &quot;Address__c&quot;:&quot;{!$Input:Property1.Address__c}&quot;
+},
+{
+ &quot;Thumbnail__c&quot;:&quot;{!$Input:Property2.Thumbnail__c}&quot;,
+ &quot;Location__Longitude__s&quot;:{!$Input:Property2.Location__Longitude__s},
+ &quot;City__c&quot;:&quot;{!$Input:Property2.City__c}&quot;,
+ &quot;Description__c&quot;:&quot;{!$Input:Property2.Description__c}&quot;,
+ &quot;Baths__c&quot;:{!$Input:Property2.Baths__c},
+ &quot;Price__c&quot;:{!$Input:Property2.Price__c},
+ &quot;Beds__c&quot;:{!$Input:Property2.Beds__c},
+ &quot;Location__Latitude__s&quot;:{!$Input:Property2.Location__Latitude__s},
+ &quot;State__c&quot;:&quot;{!$Input:Property2.State__c}&quot;,
+ &quot;Name&quot;:&quot;{!$Input:Property2.Name}&quot;,
+ &quot;Address__c&quot;:&quot;{!$Input:Property2.Address__c}&quot;
+},
+{
+ &quot;Thumbnail__c&quot;:&quot;{!$Input:Property3.Thumbnail__c}&quot;,
+ &quot;Location__Longitude__s&quot;:{!$Input:Property3.Location__Longitude__s},
+ &quot;City__c&quot;:&quot;{!$Input:Property3.City__c}&quot;,
+ &quot;Description__c&quot;:&quot;{!$Input:Property3.Description__c}&quot;,
+ &quot;Baths__c&quot;:{!$Input:Property3.Baths__c},
+ &quot;Price__c&quot;:{!$Input:Property3.Price__c},
+ &quot;Beds__c&quot;:{!$Input:Property3.Beds__c},
+ &quot;Location__Latitude__s&quot;:{!$Input:Property3.Location__Latitude__s},
+ &quot;State__c&quot;:&quot;{!$Input:Property3.State__c}&quot;,
+ &quot;Name&quot;:&quot;{!$Input:Property3.Name}&quot;,
+ &quot;Address__c&quot;:&quot;{!$Input:Property3.Address__c}&quot;
+}
+]
+
+Instructions:
+&quot;&quot;&quot;
+Use clear, concise and straightforward language using the active voice.
+Generate a subject line and title of the letter that increases open rate.
+Keep the content body clean and easy to read
+The output format is HTML in the below format put the subject in its own tag &lt;subject&gt;&lt;/subject&gt; before the body:
+&lt;html&gt;
+ &lt;body&gt;
+    &lt;title&gt; Name: &lt;/title&gt;
+    &lt;h2&gt; Description: &lt;/h2&gt;
+    &lt;img&gt; &lt;/img&gt; 
+    &lt;br/&gt;    
+  &lt;h3&gt; Discover More Products You Might Enjoy&lt;h3&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
+Make sure the picture has a card layout with the border of the card round shaped.
+
+Add a section that lists similar properties as listed below in the same html output format:
+{!$Apex:PropertiesInterestedContactPromptExt.Prompt}
+&quot;&quot;&quot;
+</content>
+        <inputs>
+            <apiName>Contact</apiName>
+            <definition>SOBJECT://Contact</definition>
+            <masterLabel>Contact</masterLabel>
+            <referenceName>Input:Contact</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>Property1</apiName>
+            <definition>SOBJECT://Property__c</definition>
+            <masterLabel>Property1</masterLabel>
+            <referenceName>Input:Property1</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>Property2</apiName>
+            <definition>SOBJECT://Property__c</definition>
+            <masterLabel>Property2</masterLabel>
+            <referenceName>Input:Property2</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>Property3</apiName>
+            <definition>SOBJECT://Property__c</definition>
+            <masterLabel>Property3</masterLabel>
+            <referenceName>Input:Property3</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>apex://PropertiesInterestedContactPromptExt</definition>
+            <parameters>
+                <definition>SOBJECT://Contact</definition>
+                <isRequired>true</isRequired>
+                <parameterName>Contact</parameterName>
+                <valueExpression>{!$Input:Contact}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>SOBJECT://Property__c</definition>
+                <isRequired>true</isRequired>
+                <parameterName>Property1</parameterName>
+                <valueExpression>{!$Input:Property1}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>SOBJECT://Property__c</definition>
+                <isRequired>true</isRequired>
+                <parameterName>Property2</parameterName>
+                <valueExpression>{!$Input:Property2}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>SOBJECT://Property__c</definition>
+                <isRequired>true</isRequired>
+                <parameterName>Property3</parameterName>
+                <valueExpression>{!$Input:Property3}</valueExpression>
+            </parameters>
+            <referenceName>Apex:PropertiesInterestedContactPromptExt</referenceName>
+        </templateDataProviders>
+        <versionNumber>1</versionNumber>
+    </templateVersions>
+    <type>einstein_gpt__flex</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>

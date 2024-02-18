@@ -1,0 +1,47 @@
+<template>
+    <lightning-card icon-name="custom:custom38">
+        <template lwc:if={property.data}>
+            <span slot="title">{address}</span>
+            <div class="slds-var-m-around_medium">
+                <template lwc:if={carouselItems}>
+                    <lightning-carousel>
+                        <template
+                            for:each={carouselItems}
+                            for:item="carouselItem"
+                        >
+                            <lightning-carousel-image
+                                key={carouselItem.url}
+                                src={carouselItem.url}
+                                description={carouselItem.title}
+                            ></lightning-carousel-image>
+                        </template>
+                    </lightning-carousel>
+                </template>
+                <template lwc:else>
+                    <lightning-icon
+                        icon-name="utility:photo"
+                        size="medium"
+                        class="slds-align_absolute-center"
+                    ></lightning-icon>
+                    <p class="slds-text-color_weak slds-text-align_center">
+                        There are currently no pictures for this property.
+                    </p>
+                </template>
+                <lightning-input
+                    type="file"
+                    label="Add picture"
+                    accept=".jpg,.png,.gif"
+                    onchange={handleFilesSelected}
+                    multiple
+                >
+                </lightning-input>
+            </div>
+        </template>
+        <template lwc:if={errors}>
+            <c-error-panel
+                friendly-message="Error retrieving pictures"
+                errors={errors}
+            ></c-error-panel>
+        </template>
+    </lightning-card>
+</template>

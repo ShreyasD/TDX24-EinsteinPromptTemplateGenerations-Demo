@@ -196,6 +196,16 @@ Created Date: {!Loop_over_Case_Feed.CreatedDate}
     <start>
         <locationX>50</locationX>
         <locationY>0</locationY>
+        <capabilityTypes>
+            <name>PromptTemplateType://einstein_gpt__recordSummary</name>
+            <capabilityName>PromptTemplateType://einstein_gpt__recordSummary</capabilityName>
+            <inputs>
+                <name>objectToSummarize</name>
+                <capabilityInputName>objectToSummarize</capabilityInputName>
+                <dataType>SOBJECT://Case</dataType>
+                <isCollection>false</isCollection>
+            </inputs>
+        </capabilityTypes>
         <connector>
             <targetReference>Selected_Case</targetReference>
         </connector>
