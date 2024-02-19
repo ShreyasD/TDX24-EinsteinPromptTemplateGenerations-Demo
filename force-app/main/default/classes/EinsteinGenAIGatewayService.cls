@@ -5,7 +5,10 @@ public class EinsteinGenAIGatewayService {
         ConnectApi.EinsteinLlmGenerationsInput generationsInput = new ConnectApi.EinsteinLlmGenerationsInput();
         generationsInput.promptTextorId = prompt;
         generationsInput.additionalConfig = new ConnectApi.EinsteinLlmAdditionalConfigInput();
-        generationsInput.additionalConfig.maxTokens = 512;
+        generationsInput.additionalConfig.model = 'gpt-3.5-turbo';
+        generationsInput.additionalConfig.numGenerations = 1;
+        generationsInput.additionalConfig.enablePiiMasking = true;
+        generationsInput.additionalConfig.temperature = 0;
         generationsInput.additionalConfig.applicationName = 'PromptBuilderPreview';
 
         // Call the service
@@ -27,6 +30,10 @@ public class EinsteinGenAIGatewayService {
         promptGenerationsInput.isPreview = false;
         // Set additional configuration values
         promptGenerationsInput.additionalConfig = new ConnectApi.EinsteinLlmAdditionalConfigInput();
+        promptGenerationsInput.additionalConfig.model = 'gpt-3.5-turbo';
+        promptGenerationsInput.additionalConfig.numGenerations = 1;
+        promptGenerationsInput.additionalConfig.enablePiiMasking = true;
+        promptGenerationsInput.additionalConfig.temperature = 0;
         promptGenerationsInput.additionalConfig.applicationName = 'PromptTemplateGenerationsInvocable';
 
         // Build input map
@@ -48,6 +55,7 @@ public class EinsteinGenAIGatewayService {
         response.prompt = promptOutput.prompt;
         response.generations = promptOutput.generations;
 
+        System.debug('response: ' + response);
         return response;
     }
 

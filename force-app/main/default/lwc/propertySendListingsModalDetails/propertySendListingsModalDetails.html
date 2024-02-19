@@ -1,18 +1,23 @@
 <template>
-    <template lwc:if={properties}>
-        <div class="slds-grid slds-wrap">
-            <template
-                for:each={properties}
-                for:item="property">
-                <c-property-tile
-                    property={property}
-                    key={property.Id}
-                    onselected={handlePropertySelected}
-                    class="slds-col slds-var-m-around_xx-small"
-                    data-id={property.Id}
-                ></c-property-tile>
-            </template>
-        </div>
-        <c-property-list-map properties={properties} lwc:ref="propertyMap"></c-property-list-map>
-    </template>
+    <lightning-card
+        title="Verify Properties of Interest"
+        class="slds-card__body_inner"
+        icon-name="standard:delegated_account">
+        <template lwc:if={properties}>
+            <div class="slds-grid slds-wrap">
+                <template
+                    for:each={properties}
+                    for:item="property">
+                    <c-property-tile
+                        property={property}
+                        key={property.Id}
+                        onselected={handlePropertySelected}
+                        class="slds-col slds-var-m-around_xx-small"
+                        data-id={property.Id}
+                    ></c-property-tile>
+                </template>
+            </div>
+            <c-property-list-map properties={properties} lwc:ref="propertyMap"></c-property-list-map>
+        </template>
+    </lightning-card>
 </template>

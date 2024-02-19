@@ -1,0 +1,12 @@
+
+
+.loading-container lightning-spinner {
+    background: transparent;
+  }
+  
+.loading-container {
+    position: relative;
+    display: inline-block;
+    min-width: 2.5rem;
+    max-width: 2.5rem;
+}

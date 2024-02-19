@@ -142,4 +142,37 @@ public with sharing class PropertyController {
         ];
     }
 
+    /**
+     * Endpoint that retrieves similar properties by tag
+     * @param propertyId Property Id
+     * @param propertyTag Property Tag
+     * @return List of properties
+     */
+    @AuraEnabled
+    public static PropertiesEmailResult sendEmailToClient(Id clientId, String subject, String content) {
+        try {
+            //Create Email content
+            Messaging.SingleEmailMessage email = new Messaging.SingleEmailMessage();
+            email.setTargetObjectId(clientId);
+            email.setSubject(subject);
+            email.setHtmlBody(content);
+            email.setSenderDisplayName('Dreamhouse Realty <no-reply>');
+            System.debug('Email Created: ' + email);
+
+            //Send email
+            Messaging.SendEmailResult[] result = Messaging.sendEmail(new List<Messaging.Email>{email});
+            System.debug('Message sent ' + result);
+
+            //Send response
+            PropertiesEmailResult response = new PropertiesEmailResult();
+            response.isSuccess = result[0].isSuccess();
+            if(!response.isSuccess) {
+                response.error = result[0].getErrors()[0].getMessage();
+            }
+            return response;
+        } catch (EmailException ex) {
+            throw new AuraHandledException('Error sending email: ' + ex.getMessage());
+        }
+        
+    }
 }

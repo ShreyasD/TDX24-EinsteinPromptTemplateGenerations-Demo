@@ -1,0 +1,46 @@
+<template>
+    <template lwc:if={error}>
+        <c-error-panel
+            friendly-message="Error generating prompt message"
+            errors={error}>
+        </c-error-panel>
+    </template>
+    <template lwc:elseif={isLoading}>
+        <div class="slds-text-align_center slds-p-around_x-small">
+            <div class="loading-container">
+                <lightning-spinner alternative-text="Loading" size="large" class="slds-text-align_center"></lightning-spinner>
+            </div>
+        </div>
+        <br />
+        <div class="slds-text-align_center slds-p-around_x-small">
+            <lightning-formatted-rich-text value={loadingText}></lightning-formatted-rich-text>
+        </div>
+    </template>
+    <template lwc:elseif={isEmailSent}>
+        <lightning-formatted-rich-text class="slds-align_absolute-center" value="<strong>Email sent successfully. You may close this popup now.</strong>"></lightning-formatted-rich-text>
+    </template>
+    <template lwc:else>
+        <lightning-card
+            title="Verify Email"
+            class="slds-card__body_inner"
+            icon-name="standard:email_chatter">
+            <div class="slds-form-element">
+                <label class="slds-form-element__label">Subject</label>
+                <div class="slds-form-element__control">
+                    <input type="text" id="emailSubjectInput" class="slds-input" value={emailSubject}/>
+                </div>
+            </div>
+            <div class="slds-form-element">
+                <label class="slds-form-element__label">Content</label>
+                <div class="slds-form-element__control">
+                    <lightning-input-rich-text
+                        id="emailContentInput"
+                        value={emailContent}
+                        onchange={handleChange}>
+                    </lightning-input-rich-text>
+                </div>
+            </div>
+            <lightning-button label="Send Email" slot="actions" onclick={handleEmailSend}></lightning-button>
+        </lightning-card>
+    </template>
+</template>

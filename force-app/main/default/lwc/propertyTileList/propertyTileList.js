@@ -17,6 +17,7 @@ import PROPERTYSELECTEDMC from '@salesforce/messageChannel/PropertySelected__c';
 import getPagedPropertyList from '@salesforce/apex/PropertyController.getPagedPropertyList';
 
 const PAGE_SIZE = 9;
+const SEND_EMAIL_PROPERY_SELECTION_LIMIT = 3;
 
 export default class PropertyTileList extends LightningElement {
     //pagination
@@ -30,12 +31,12 @@ export default class PropertyTileList extends LightningElement {
     minBathrooms = 0;
 
     //selections
-    @api allowSelectionLimit = 3;
+    @api allowSelectionLimit = SEND_EMAIL_PROPERY_SELECTION_LIMIT;
     selectedCount = 0;
     selectedPropertyList = [];
 
     //guidance text
-    guidanceText = "Please select using right-click a maximum of <strong>three</strong> properties to send to prospective clients.";
+    guidanceText;
 
     @wire(MessageContext)
     messageContext;
@@ -58,6 +59,10 @@ export default class PropertyTileList extends LightningElement {
                 this.handleFilterChange(message);
             }
         );
+
+        //Set guidance tex
+        this.guidanceText = "Please select using right-click <strong>" + this.allowSelectionLimit + 
+        "</strong> properties to send to prospective clients.";
     }
 
     disconnectedCallback() {
@@ -98,28 +103,32 @@ export default class PropertyTileList extends LightningElement {
 
             propertyTile.toggleSelect();
         } else {
-            this.showToast("Warning!", "Only able to select " + this.allowSelectionLimit + " listings for prospecting.", "warning");
+            this.showToast("Warning!", "Maximum of " + this.allowSelectionLimit + " properties of allowed for client email.", "warning");
         }
     }
 
-    handlePropertyClick() {
+    handlePropertyClick(event) {
         //send event to update other components
         const message = { propertyId: event.detail };
         publish(this.messageContext, PROPERTYSELECTEDMC, message);
     }
 
     async handleSendListings() {
-        const result = await PropertySendListingsModal.open({
-            // `label` is not included here in this example.
-            // it is set on lightning-modal-header instead
-            size: 'large',
-            description: 'Guided flow for sending prospecting email for interested listings for Contacts or Leads.',
-            properties: this.selectedPropertyList,
-        });
-        // if modal closed with X button, promise returns result = 'undefined'
-        // if modal closed with OK button, promise returns result = 'okay'
-        console.log(result);
-
+        console.log("handleSendListings: " + JSON.stringify(this.selectedPropertyList));
+        if(this.selectedCount === this.allowSelectionLimit) {
+            const result = await PropertySendListingsModal.open({
+                // `label` is not included here in this example.
+                // it is set on lightning-modal-header instead
+                size: 'large',
+                description: 'Guided flow for sending prospecting email for interested listings for Contacts or Leads.',
+                properties: this.selectedPropertyList,
+            });
+            // if modal closed with X button, promise returns result = 'undefined'
+            // if modal closed with OK button, promise returns result = 'okay'
+            console.log(result);
+        } else {
+            this.showToast("Warning!", "Please select " + this.allowSelectionLimit + " propertiese to send to client.", "warning");
+        }
     }
 
     showToast(title, message, variant) {

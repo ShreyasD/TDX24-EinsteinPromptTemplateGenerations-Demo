@@ -1,5 +1,5 @@
 <template>
-    <lightning-modal-header label="Properties of Interest Email"></lightning-modal-header>
+    <lightning-modal-header label="Send Interested Properties to Clients"></lightning-modal-header>
     <lightning-modal-body>
         <div class="slds-progress">
             <ol class="slds-progress__list">
@@ -32,24 +32,34 @@
             </ol>
         </div>
         <div class="slds-m-around_x-small">
-            <lwc:component lwc:is={stepComponent}
-                        lwc:ref="currentStep"
-                        lwc:spread={stepComponentParams}>
-            </lwc:component>
+            <template lwc:if={error}>
+                <c-error-panel
+                    friendly-message="Error on current page"
+                    errors={error}>
+                </c-error-panel>
+            </template>
+            <template lwc:else>
+                <lwc:component lwc:is={stepComponent}
+                            lwc:ref="currentStep"
+                            lwc:spread={stepComponentParams}>
+                </lwc:component>
+            </template>
         </div>
     </lightning-modal-body>
     <lightning-modal-footer>
-        <lightning-layout horizontal-align="center" class="slds-m-top_large">
-            <div class="slds-m-top_medium">
-                <lightning-button variant="neutral" name="Previous" 
-                    label="Previous" onclick={handlePrevious} lwc:if={showPrevButton}>
-                </lightning-button>
-            </div>
-            <div class="slds-m-top_medium">
-                <lightning-button variant="brand" name="Next" label="Next" 
-                    onclick={handleNext}>
-                </lightning-button>
-            </div>
-        </lightning-layout>
+        <template lwc:if={showWizardButtons}>
+            <lightning-layout horizontal-align="center" class="slds-m-top_large">
+                <div class="slds-m-top_medium">
+                    <lightning-button variant="neutral" name="Previous" 
+                        label="Previous" onclick={handlePrevious} lwc:if={showPrevButton}>
+                    </lightning-button>
+                </div>
+                <div class="slds-m-top_medium">
+                    <lightning-button variant="brand" name="Next" label="Next" 
+                        onclick={handleNext}>
+                    </lightning-button>
+                </div>
+            </lightning-layout>
+        </template>
     </lightning-modal-footer>
 </template>
