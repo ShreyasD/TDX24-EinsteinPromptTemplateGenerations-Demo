@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>Parses the JSON string provided by prompt action into object.</description>
+        <name>Parse_AI_Generated_Feedback_Summary</name>
+        <label>Parse AI Generated Feedback Summary</label>
+        <locationX>176</locationX>
+        <locationY>539</locationY>
+        <actionName>AIGeneratedFeedbackSummaryParser</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Update_Property_with_AI_Generated_Response_Params</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>jsonStrings</name>
+            <value>
+                <elementReference>Summarize_Property_Feedback.promptResponse</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>AIGeneratedFeedbackSummaryParser</nameSegment>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
+        <description>Call the prompt template to generate AI feedback, recommendation and sentiment.</description>
+        <name>Summarize_Property_Feedback</name>
+        <label>Summarize Property Feedback</label>
+        <locationX>176</locationX>
+        <locationY>431</locationY>
+        <actionName>Dreamhouse_Summarize_Property_Feedback</actionName>
+        <actionType>generatePromptResponse</actionType>
+        <connector>
+            <targetReference>Parse_AI_Generated_Feedback_Summary</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>Input:Property</name>
+            <value>
+                <elementReference>Get_Property</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Dreamhouse_Summarize_Property_Feedback</nameSegment>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <apiVersion>60.0</apiVersion>
+    <description>When a new property feedback is submitted for a property this flow runs to recalculate the AI Generated feedback summary.</description>
+    <environments>Default</environments>
+    <interviewLabel>Dreamhouse Generate AI Feedback Summary {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Dreamhouse Generate AI Feedback Summary</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>Get the property the feedback is provided for.</description>
+        <name>Get_Property</name>
+        <label>Get Property</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Summarize_Property_Feedback</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Property__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Property__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <description>Populates fields with AI Generated feedback summary variables.</description>
+        <name>Update_Property_with_AI_Generated_Response_Params</name>
+        <label>Update Property with AI Generated Response Params</label>
+        <locationX>176</locationX>
+        <locationY>647</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Property__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>AI_Generated_Avg_Rating__c</field>
+            <value>
+                <elementReference>Parse_AI_Generated_Feedback_Summary.Rating</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>AI_Generated_Feedback_Sentiment__c</field>
+            <value>
+                <elementReference>Parse_AI_Generated_Feedback_Summary.AIGeneratedSentiment</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>AI_Generated_Feedback_Summary__c</field>
+            <value>
+                <elementReference>Parse_AI_Generated_Feedback_Summary.AIGeneratedFeedback</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>AI_Generated_Recommendation__c</field>
+            <value>
+                <elementReference>Parse_AI_Generated_Feedback_Summary.AIGeneratedRecommendation</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Property__c</object>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Property</targetReference>
+        </connector>
+        <object>Property_Feedback__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>
