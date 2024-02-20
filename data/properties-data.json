@@ -3,183 +3,7 @@
         {
             "attributes": {
                 "type": "Property__c",
-                "referenceId": "18HenryStRef"
-            },
-            "Name": "Stunning Victorian",
-            "Address__c": "18 Henry St",
-            "City__c": "Cambridge",
-            "State__c": "MA",
-            "Zip__c": "01742",
-            "Price__c": 975000,
-            "Beds__c": 4,
-            "Baths__c": 3,
-            "Location__Longitude__s": -71.11095,
-            "Location__Latitude__s": 42.35663,
-            "Picture__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/realty/house01.jpg",
-            "Thumbnail__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/realty/house01sq.jpg",
-            "Tags__c": "victorian",
-            "Description__c": "Step into the charm of yesteryear with this stunning Victorian home nestled in the heart of Cambridge. Impeccably maintained and boasting elegant architectural details, this residence offers a perfect blend of historic character and modern convenience. With four spacious bedrooms, three luxurious bathrooms, and a prime location near top-rated schools and amenities, this home is an ideal choice for those seeking classic elegance and comfort.",
-            "Broker__c": "@CarolineBrookerRef",
-            "Status__c": "Available"
-        },
-        {
-            "attributes": {
-                "type": "Property__c",
-                "referenceId": "24PearlStRef"
-            },
-            "Name": "Ultimate Sophistication",
-            "Address__c": "24 Pearl St",
-            "City__c": "Cambridge",
-            "State__c": "MA",
-            "Zip__c": "02420",
-            "Price__c": 1200000,
-            "Beds__c": 5,
-            "Baths__c": 4,
-            "Location__Longitude__s": -71.10869,
-            "Location__Latitude__s": 42.359103,
-            "Picture__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/realty/house02.jpg",
-            "Thumbnail__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/realty/house02sq.jpg",
-            "Tags__c": "colonial",
-            "Description__c": "Experience the pinnacle of sophistication in this exquisite colonial-style home situated in the prestigious city of Cambridge. Meticulously designed and featuring impeccable craftsmanship, this residence offers unparalleled luxury and comfort. With five bedrooms, four bathrooms, and a host of upscale amenities, including gourmet kitchen and expansive living spaces, this home is perfect for discerning buyers seeking refined living in a prime location.",
-            "Broker__c": "@MichaelJonesRef",
-            "Status__c": "Contracted"
-        },
-        {
-            "attributes": {
-                "type": "Property__c",
-                "referenceId": "72FrancisStRef"
-            },
-            "Name": "Modern City Living",
-            "Address__c": "72 Francis St",
-            "City__c": "Boston",
-            "State__c": "MA",
-            "Zip__c": "02420",
-            "Price__c": 825000,
-            "Beds__c": 5,
-            "Baths__c": 4,
-            "Location__Longitude__s": -71.106827,
-            "Location__Latitude__s": 42.335435,
-            "Picture__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/realty/house03.jpg",
-            "Thumbnail__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/realty/house03sq.jpg",
-            "Tags__c": "contemporary",
-            "Description__c": "Embrace the vibrancy of city life in this sleek and contemporary home located in the heart of Boston. Designed for modern living, this residence boasts clean lines, open spaces, and high-end finishes throughout. With five bedrooms, four bathrooms, and a rooftop terrace offering panoramic city views, this home is an urban oasis perfect for those who value style, convenience, and luxury.",
-            "Broker__c": "@JonathanBradleyRef",
-            "Status__c": "Pre Market"
-        },
-        {
-            "attributes": {
-                "type": "Property__c",
-                "referenceId": "32PrinceStRef"
-            },
-            "Name": "Stunning Colonial",
-            "Address__c": "32 Prince St",
-            "City__c": "Cambridge",
-            "State__c": "MA",
-            "Zip__c": "02420",
-            "Price__c": 930000,
-            "Beds__c": 5,
-            "Baths__c": 4,
-            "Location__Longitude__s": -71.110448,
-            "Location__Latitude__s": 42.360642,
-            "Picture__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/realty/house04.jpg",
-            "Thumbnail__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/realty/house04sq.jpg",
-            "Tags__c": "colonial",
-            "Description__c": "Discover the timeless beauty of colonial architecture in this stunning home nestled in Cambridge's historic district. Thoughtfully updated for modern living while preserving its classic charm, this residence offers five bedrooms, four bathrooms, and elegant living spaces ideal for entertaining. With a spacious backyard and proximity to top-rated schools and amenities, this home is a rare find for those seeking quintessential New England living.",
-            "Broker__c": "@JenniferWuRef",
-            "Status__c": "Available"
-        },
-        {
-            "attributes": {
-                "type": "Property__c",
-                "referenceId": "110BaxterStRef"
-            },
-            "Name": "Waterfront in the City",
-            "Address__c": "110 Baxter Street",
-            "City__c": "Boston",
-            "State__c": "MA",
-            "Zip__c": "02420",
-            "Price__c": 850000,
-            "Beds__c": 3,
-            "Baths__c": 2,
-            "Location__Longitude__s": -71.084454,
-            "Location__Latitude__s": 42.368168,
-            "Picture__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/realty/house05.jpg",
-            "Thumbnail__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/realty/house05sq.jpg",
-            "Tags__c": "contemporary",
-            "Description__c": "Experience waterfront living in the heart of Boston in this contemporary gem. Boasting breathtaking views of the city skyline and waterfront, this three-bedroom, two-bathroom home offers a serene retreat from urban life. With modern amenities, luxurious finishes, and a prime location near dining, shopping, and entertainment options, this residence offers the best of city living with a waterfront twist.",
-            "Broker__c": "@OliviaGreenRef",
-            "Status__c": "Closed"
-        },
-        {
-            "attributes": {
-                "type": "Property__c",
-                "referenceId": "448HanoverStRef"
-            },
-            "Name": "Quiet Retreat",
-            "Address__c": "448 Hanover St",
-            "City__c": "Boston",
-            "State__c": "MA",
-            "Zip__c": "02420",
-            "Price__c": 725000,
-            "Beds__c": 4,
-            "Baths__c": 2,
-            "Location__Longitude__s": -71.052617,
-            "Location__Latitude__s": 42.366855,
-            "Picture__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/realty/house06.jpg",
-            "Thumbnail__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/realty/house06sq.jpg",
-            "Tags__c": "colonial",
-            "Description__c": "Escape the hustle and bustle of city life in this charming colonial retreat tucked away in Boston's historic district. Featuring four bedrooms, two bathrooms, and a private backyard oasis, this home offers a peaceful sanctuary amidst the city's vibrant energy. With its classic architecture, cozy interiors, and proximity to parks, shops, and restaurants, this residence is an idyllic retreat for those seeking tranquility and charm.",
-            "Broker__c": "@MiriamAupontRef",
-            "Status__c": "Contracted"
-        },
-        {
-            "attributes": {
-                "type": "Property__c",
-                "referenceId": "127EndicottStRef"
-            },
-            "Name": "City Living",
-            "Address__c": "127 Endicott St",
-            "City__c": "Boston",
-            "State__c": "MA",
-            "Zip__c": "02420",
-            "Price__c": 450000,
-            "Beds__c": 3,
-            "Baths__c": 1,
-            "Location__Longitude__s": -71.057352,
-            "Location__Latitude__s": 42.365003,
-            "Picture__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/realty/house07.jpg",
-            "Thumbnail__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/realty/house07sq.jpg",
-            "Tags__c": "colonial",
-            "Description__c": "Enjoy the convenience of city living in this classic colonial home located in the heart of Boston. With three bedrooms, one bathroom, and ample living space, this residence offers comfortable living in a bustling urban setting. Close to transportation, dining, and entertainment options, this home is perfect for those looking to experience all that city life has to offer.",
-            "Broker__c": "@MichelleLambertRef",
-            "Status__c": "Available"
-        },
-        {
-            "attributes": {
-                "type": "Property__c",
-                "referenceId": "48BrattleStRef"
-            },
-            "Name": "Heart of Harvard Square",
-            "Address__c": "48 Brattle St",
-            "City__c": "Cambridge",
-            "State__c": "MA",
-            "Zip__c": "02420",
-            "Price__c": 450000,
-            "Beds__c": 5,
-            "Baths__c": 4,
-            "Location__Longitude__s": -71.121653,
-            "Location__Latitude__s": 42.374117,
-            "Picture__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/realty/house10.jpg",
-            "Thumbnail__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/realty/house10sq.jpg",
-            "Tags__c": "victorian",
-            "Description__c": "Live at the intersection of history and culture in this charming Victorian home located in the heart of Harvard Square. Featuring five bedrooms, four bathrooms, and a host of original architectural details, this residence offers quintessential New England living with modern comforts. With its prime location near Harvard University, shops, and restaurants, this home is a rare find for those seeking elegance and convenience.",
-            "Broker__c": "@VictorOchoaRef",
-            "Status__c": "Under Agreement"
-        },
-        {
-            "attributes": {
-                "type": "Property__c",
-                "referenceId": "121HarborwalkRef"
+                "referenceId": "Property__cRef1"
             },
             "Name": "Seaport District Retreat",
             "Address__c": "121 Harborwalk",
@@ -195,13 +19,35 @@
             "Thumbnail__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/realty/house09sq.jpg",
             "Tags__c": "contemporary",
             "Description__c": "Escape to the Seaport District in this contemporary retreat offering three bedrooms, three bathrooms, and stunning harbor views. Designed for modern living, this home features sleek finishes, open-concept living spaces, and a private balcony perfect for taking in the sights and sounds of the city. With its prime location near waterfront parks, restaurants, and cultural attractions, this residence offers a luxurious urban lifestyle like no other.",
-            "Broker__c": "@CarolineBrookerRef",
-            "Status__c": "Available"
+            "Status__c": "Available",
+            "Broker__c": "@Broker__cRef1"
         },
         {
             "attributes": {
                 "type": "Property__c",
-                "referenceId": "640HarrisonAveRef"
+                "referenceId": "Property__cRef2"
+            },
+            "Name": "Stunning Victorian",
+            "Address__c": "18 Henry St",
+            "City__c": "Cambridge",
+            "State__c": "MA",
+            "Zip__c": "01742",
+            "Price__c": 975000,
+            "Beds__c": 4,
+            "Baths__c": 3,
+            "Location__Longitude__s": -71.11095,
+            "Location__Latitude__s": 42.35663,
+            "Picture__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/realty/house01.jpg",
+            "Thumbnail__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/realty/house01sq.jpg",
+            "Tags__c": "victorian",
+            "Description__c": "Step into the charm of yesteryear with this stunning Victorian home nestled in the heart of Cambridge. Impeccably maintained and boasting elegant architectural details, this residence offers a perfect blend of historic character and modern convenience. With four spacious bedrooms, three luxurious bathrooms, and a prime location near top-rated schools and amenities, this home is an ideal choice for those seeking classic elegance and comfort.",
+            "Status__c": "Available",
+            "Broker__c": "@Broker__cRef1"
+        },
+        {
+            "attributes": {
+                "type": "Property__c",
+                "referenceId": "Property__cRef3"
             },
             "Name": "Contemporary City Living",
             "Address__c": "640 Harrison Ave",
@@ -217,13 +63,35 @@
             "Thumbnail__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/realty/house08sq.jpg",
             "Tags__c": "contemporary",
             "Description__c": "Experience the epitome of contemporary city living in this stylish two-bedroom, two-bathroom home located in Boston's vibrant South End neighborhood. With its sleek design, open floor plan, and upscale finishes, this residence offers the perfect blend of form and function. Enjoy panoramic city views from the rooftop terrace or explore the neighborhood's trendy shops, cafes, and galleries—all just steps away from your front door.",
-            "Broker__c": "@MichaelJonesRef",
-            "Status__c": "Available"
+            "Status__c": "Available",
+            "Broker__c": "@Broker__cRef2"
         },
         {
             "attributes": {
                 "type": "Property__c",
-                "referenceId": "95GloucesterStRef"
+                "referenceId": "Property__cRef4"
+            },
+            "Name": "Ultimate Sophistication",
+            "Address__c": "24 Pearl St",
+            "City__c": "Cambridge",
+            "State__c": "MA",
+            "Zip__c": "02420",
+            "Price__c": 1200000,
+            "Beds__c": 5,
+            "Baths__c": 4,
+            "Location__Longitude__s": -71.10869,
+            "Location__Latitude__s": 42.359103,
+            "Picture__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/realty/house02.jpg",
+            "Thumbnail__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/realty/house02sq.jpg",
+            "Tags__c": "colonial",
+            "Description__c": "Experience the pinnacle of sophistication in this exquisite colonial-style home situated in the prestigious city of Cambridge. Meticulously designed and featuring impeccable craftsmanship, this residence offers unparalleled luxury and comfort. With five bedrooms, four bathrooms, and a host of upscale amenities, including gourmet kitchen and expansive living spaces, this home is perfect for discerning buyers seeking refined living in a prime location.",
+            "Status__c": "Contracted",
+            "Broker__c": "@Broker__cRef2"
+        },
+        {
+            "attributes": {
+                "type": "Property__c",
+                "referenceId": "Property__cRef5"
             },
             "Name": "Architectural Details",
             "Address__c": "95 Gloucester St",
@@ -233,19 +101,41 @@
             "Price__c": 690000,
             "Beds__c": 3,
             "Baths__c": 3,
-            "Location__Latitude__s": 42.349693,
             "Location__Longitude__s": -71.084407,
+            "Location__Latitude__s": 42.349693,
             "Picture__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/realty/house11.jpg",
             "Thumbnail__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/realty/house11sq.jpg",
             "Tags__c": "contemporary",
             "Description__c": "Discover architectural elegance in this meticulously crafted home located in Boston's prestigious Back Bay neighborhood. Featuring three bedrooms, three bathrooms, and a wealth of intricate details, including ornate moldings and hardwood floors, this residence exudes timeless charm and sophistication. With its prime location near historic landmarks, upscale shops, and dining destinations, this home offers a luxurious lifestyle in one of the city's most coveted neighborhoods.",
-            "Broker__c": "@JonathanBradleyRef",
-            "Status__c": "Available"
+            "Status__c": "Available",
+            "Broker__c": "@Broker__cRef3"
         },
         {
             "attributes": {
                 "type": "Property__c",
-                "referenceId": "145CommonwealthAveRef"
+                "referenceId": "Property__cRef6"
+            },
+            "Name": "Modern City Living",
+            "Address__c": "72 Francis St",
+            "City__c": "Boston",
+            "State__c": "MA",
+            "Zip__c": "02420",
+            "Price__c": 825000,
+            "Beds__c": 5,
+            "Baths__c": 4,
+            "Location__Longitude__s": -71.106827,
+            "Location__Latitude__s": 42.335435,
+            "Picture__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/realty/house03.jpg",
+            "Thumbnail__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/realty/house03sq.jpg",
+            "Tags__c": "contemporary",
+            "Description__c": "Embrace the vibrancy of city life in this sleek and contemporary home located in the heart of Boston. Designed for modern living, this residence boasts clean lines, open spaces, and high-end finishes throughout. With five bedrooms, four bathrooms, and a rooftop terrace offering panoramic city views, this home is an urban oasis perfect for those who value style, convenience, and luxury.",
+            "Status__c": "Pre Market",
+            "Broker__c": "@Broker__cRef3"
+        },
+        {
+            "attributes": {
+                "type": "Property__c",
+                "referenceId": "Property__cRef7"
             },
             "Name": "Contemporary Luxury",
             "Address__c": "145 Commonwealth Ave",
@@ -255,14 +145,124 @@
             "Price__c": 845000,
             "Beds__c": 4,
             "Baths__c": 3,
-            "Location__Latitude__s": 42.352466,
             "Location__Longitude__s": -71.075311,
+            "Location__Latitude__s": 42.352466,
             "Picture__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/realty/house12.jpg",
             "Thumbnail__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/realty/house12sq.jpg",
             "Tags__c": "contemporary",
             "Description__c": "Indulge in contemporary luxury in this stunning home located on Boston's iconic Commonwealth Avenue. With four bedrooms, three bathrooms, and an array of high-end amenities, including a gourmet kitchen and spa-like bathrooms, this residence offers the ultimate in modern living. Enjoy sweeping views of the city skyline from the rooftop terrace or explore the neighborhood's vibrant culture and entertainment options—all just moments from your doorstep.",
-            "Broker__c": "@JenniferWuRef",
-            "Status__c": "Available"
+            "Status__c": "Available",
+            "Broker__c": "@Broker__cRef4"
+        },
+        {
+            "attributes": {
+                "type": "Property__c",
+                "referenceId": "Property__cRef8"
+            },
+            "Name": "Stunning Colonial",
+            "Address__c": "32 Prince St",
+            "City__c": "Cambridge",
+            "State__c": "MA",
+            "Zip__c": "02420",
+            "Price__c": 930000,
+            "Beds__c": 5,
+            "Baths__c": 4,
+            "Location__Longitude__s": -71.110448,
+            "Location__Latitude__s": 42.360642,
+            "Picture__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/realty/house04.jpg",
+            "Thumbnail__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/realty/house04sq.jpg",
+            "Tags__c": "colonial",
+            "Description__c": "Discover the timeless beauty of colonial architecture in this stunning home nestled in Cambridge's historic district. Thoughtfully updated for modern living while preserving its classic charm, this residence offers five bedrooms, four bathrooms, and elegant living spaces ideal for entertaining. With a spacious backyard and proximity to top-rated schools and amenities, this home is a rare find for those seeking quintessential New England living.",
+            "Status__c": "Available",
+            "Broker__c": "@Broker__cRef4"
+        },
+        {
+            "attributes": {
+                "type": "Property__c",
+                "referenceId": "Property__cRef9"
+            },
+            "Name": "Waterfront in the City",
+            "Address__c": "110 Baxter Street",
+            "City__c": "Boston",
+            "State__c": "MA",
+            "Zip__c": "02420",
+            "Price__c": 850000,
+            "Beds__c": 3,
+            "Baths__c": 2,
+            "Location__Longitude__s": -71.084454,
+            "Location__Latitude__s": 42.368168,
+            "Picture__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/realty/house05.jpg",
+            "Thumbnail__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/realty/house05sq.jpg",
+            "Tags__c": "contemporary",
+            "Description__c": "Experience waterfront living in the heart of Boston in this contemporary gem. Boasting breathtaking views of the city skyline and waterfront, this three-bedroom, two-bathroom home offers a serene retreat from urban life. With modern amenities, luxurious finishes, and a prime location near dining, shopping, and entertainment options, this residence offers the best of city living with a waterfront twist.",
+            "Status__c": "Closed",
+            "Broker__c": "@Broker__cRef5"
+        },
+        {
+            "attributes": {
+                "type": "Property__c",
+                "referenceId": "Property__cRef10"
+            },
+            "Name": "Quiet Retreat",
+            "Address__c": "448 Hanover St",
+            "City__c": "Boston",
+            "State__c": "MA",
+            "Zip__c": "02420",
+            "Price__c": 725000,
+            "Beds__c": 4,
+            "Baths__c": 2,
+            "Location__Longitude__s": -71.052617,
+            "Location__Latitude__s": 42.366855,
+            "Picture__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/realty/house06.jpg",
+            "Thumbnail__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/realty/house06sq.jpg",
+            "Tags__c": "colonial",
+            "Description__c": "Escape the hustle and bustle of city life in this charming colonial retreat tucked away in Boston's historic district. Featuring four bedrooms, two bathrooms, and a private backyard oasis, this home offers a peaceful sanctuary amidst the city's vibrant energy. With its classic architecture, cozy interiors, and proximity to parks, shops, and restaurants, this residence is an idyllic retreat for those seeking tranquility and charm.",
+            "Status__c": "Contracted",
+            "Broker__c": "@Broker__cRef6"
+        },
+        {
+            "attributes": {
+                "type": "Property__c",
+                "referenceId": "Property__cRef11"
+            },
+            "Name": "City Living",
+            "Address__c": "127 Endicott St",
+            "City__c": "Boston",
+            "State__c": "MA",
+            "Zip__c": "02420",
+            "Price__c": 450000,
+            "Beds__c": 3,
+            "Baths__c": 1,
+            "Location__Longitude__s": -71.057352,
+            "Location__Latitude__s": 42.365003,
+            "Picture__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/realty/house07.jpg",
+            "Thumbnail__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/realty/house07sq.jpg",
+            "Tags__c": "colonial",
+            "Description__c": "Enjoy the convenience of city living in this classic colonial home located in the heart of Boston. With three bedrooms, one bathroom, and ample living space, this residence offers comfortable living in a bustling urban setting. Close to transportation, dining, and entertainment options, this home is perfect for those looking to experience all that city life has to offer.",
+            "Status__c": "Available",
+            "Broker__c": "@Broker__cRef7"
+        },
+        {
+            "attributes": {
+                "type": "Property__c",
+                "referenceId": "Property__cRef12"
+            },
+            "Name": "Heart of Harvard Square",
+            "Address__c": "48 Brattle St",
+            "City__c": "Cambridge",
+            "State__c": "MA",
+            "Zip__c": "02420",
+            "Price__c": 450000,
+            "Beds__c": 5,
+            "Baths__c": 4,
+            "Location__Longitude__s": -71.121653,
+            "Location__Latitude__s": 42.374117,
+            "Picture__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/realty/house10.jpg",
+            "Thumbnail__c": "https://s3-us-west-2.amazonaws.com/dev-or-devrl-s3-bucket/sample-apps/realty/house10sq.jpg",
+            "Tags__c": "victorian",
+            "Description__c": "Live at the intersection of history and culture in this charming Victorian home located in the heart of Harvard Square. Featuring five bedrooms, four bathrooms, and a host of original architectural details, this residence offers quintessential New England living with modern comforts. With its prime location near Harvard University, shops, and restaurants, this home is a rare find for those seeking elegance and convenience.",
+            "Status__c": "Under Agreement",
+            "Broker__c": "@Broker__cRef8"
         }
     ]
 }

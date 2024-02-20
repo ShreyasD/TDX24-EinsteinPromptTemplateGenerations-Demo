@@ -3,7 +3,7 @@
         {
             "attributes": {
                 "type": "Broker__c",
-                "referenceId": "CarolineBrookerRef"
+                "referenceId": "Broker__cRef1"
             },
             "Name": "Caroline Kingsley",
             "Title__c": "Senior Broker",
@@ -15,7 +15,7 @@
         {
             "attributes": {
                 "type": "Broker__c",
-                "referenceId": "MichaelJonesRef"
+                "referenceId": "Broker__cRef2"
             },
             "Name": "Michael Jones",
             "Title__c": "Senior Broker",
@@ -27,7 +27,7 @@
         {
             "attributes": {
                 "type": "Broker__c",
-                "referenceId": "JonathanBradleyRef"
+                "referenceId": "Broker__cRef3"
             },
             "Name": "Jonathan Bradley",
             "Title__c": "Senior Broker",
@@ -39,7 +39,7 @@
         {
             "attributes": {
                 "type": "Broker__c",
-                "referenceId": "JenniferWuRef"
+                "referenceId": "Broker__cRef4"
             },
             "Name": "Jennifer Wu",
             "Title__c": "Senior Broker",
@@ -51,7 +51,7 @@
         {
             "attributes": {
                 "type": "Broker__c",
-                "referenceId": "OliviaGreenRef"
+                "referenceId": "Broker__cRef5"
             },
             "Name": "Olivia Green",
             "Title__c": "Senior Broker",
@@ -63,7 +63,7 @@
         {
             "attributes": {
                 "type": "Broker__c",
-                "referenceId": "MiriamAupontRef"
+                "referenceId": "Broker__cRef6"
             },
             "Name": "Miriam Aupont",
             "Title__c": "Senior Broker",
@@ -75,7 +75,7 @@
         {
             "attributes": {
                 "type": "Broker__c",
-                "referenceId": "MichelleLambertRef"
+                "referenceId": "Broker__cRef7"
             },
             "Name": "Michelle Lambert",
             "Title__c": "Senior Broker",
@@ -87,7 +87,7 @@
         {
             "attributes": {
                 "type": "Broker__c",
-                "referenceId": "VictorOchoaRef"
+                "referenceId": "Broker__cRef8"
             },
             "Name": "Victor Ochoa",
             "Title__c": "Senior Broker",

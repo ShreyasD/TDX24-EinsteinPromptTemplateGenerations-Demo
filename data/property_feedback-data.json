@@ -1,0 +1,724 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef1"
+            },
+            "External_ID__c": "PFR-000005",
+            "Name": "PFR-000005",
+            "Property__c": "@Property__cRef1",
+            "Rating__c": 4.3,
+            "Source__c": "Showing",
+            "Comments__c": "Visited for a showing and was pleasantly surprised by the spacious layout. The backyard is perfect for entertaining. Overall, a great find!"
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef2"
+            },
+            "External_ID__c": "PFR-000004",
+            "Name": "PFR-000004",
+            "Property__c": "@Property__cRef1",
+            "Rating__c": 4.7,
+            "Source__c": "Open House",
+            "Comments__c": "Attended the open house and was blown away by the backyard oasis. The interior design is stunning and the neighborhood is peaceful. Seriously considering making an offer."
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef3"
+            },
+            "External_ID__c": "PFR-000003",
+            "Name": "PFR-000003",
+            "Property__c": "@Property__cRef1",
+            "Rating__c": 4.2,
+            "Source__c": "Website",
+            "Comments__c": "Found this property online and the photos were accurate. The description provided useful information about the property's features. It's definitely worth considering."
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef4"
+            },
+            "External_ID__c": "PFR-000002",
+            "Name": "PFR-000002",
+            "Property__c": "@Property__cRef1",
+            "Rating__c": 4,
+            "Source__c": "Showing",
+            "Comments__c": "Visited for a showing and was impressed by the spacious rooms and natural light. The kitchen is modern and well-equipped. Overall, a very appealing property."
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef5"
+            },
+            "External_ID__c": "PFR-000001",
+            "Name": "PFR-000001",
+            "Property__c": "@Property__cRef1",
+            "Rating__c": 4.5,
+            "Source__c": "Open House",
+            "Comments__c": "The open house was fantastic! The property has a great layout and the neighborhood is lovely. The only downside is that it's a bit far from public transportation."
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef6"
+            },
+            "External_ID__c": "PFR-000010",
+            "Name": "PFR-000010",
+            "Property__c": "@Property__cRef2",
+            "Rating__c": 3.2,
+            "Source__c": "Showing",
+            "Comments__c": "Visited for a showing and noticed several maintenance issues. The property feels rundown and neglected. Wouldn't recommend."
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef7"
+            },
+            "External_ID__c": "PFR-000009",
+            "Name": "PFR-000009",
+            "Property__c": "@Property__cRef2",
+            "Rating__c": 3,
+            "Source__c": "Open House",
+            "Comments__c": "Attended the open house and was underwhelmed. The property feels cramped and the layout is awkward. Not considering this one."
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef8"
+            },
+            "External_ID__c": "PFR-000008",
+            "Name": "PFR-000008",
+            "Property__c": "@Property__cRef2",
+            "Rating__c": 3,
+            "Source__c": "Website",
+            "Comments__c": "Found this property online but was disappointed upon viewing. It's much smaller than expected and lacks curb appeal. Needs serious renovation."
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef9"
+            },
+            "External_ID__c": "PFR-000007",
+            "Name": "PFR-000007",
+            "Property__c": "@Property__cRef2",
+            "Rating__c": 3.5,
+            "Source__c": "Showing",
+            "Comments__c": "Visited for a showing and the property feels neglected. The interior is outdated and in need of repairs. Not impressed."
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef10"
+            },
+            "External_ID__c": "PFR-000006",
+            "Name": "PFR-000006",
+            "Property__c": "@Property__cRef2",
+            "Rating__c": 2.8,
+            "Source__c": "Open House",
+            "Comments__c": "The open house was disappointing. The property looks nothing like the photos online. It needs significant updates and the neighborhood feels unsafe."
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef11"
+            },
+            "External_ID__c": "PFR-000015",
+            "Name": "PFR-000015",
+            "Property__c": "@Property__cRef3",
+            "Rating__c": 4.4,
+            "Source__c": "Showing",
+            "Comments__c": "Visited for a showing and was impressed by the property's cleanliness and organization. The neighborhood is charming and the property has great potential."
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef12"
+            },
+            "External_ID__c": "PFR-000014",
+            "Name": "PFR-000014",
+            "Property__c": "@Property__cRef3",
+            "Rating__c": 4.5,
+            "Source__c": "Open House",
+            "Comments__c": "The open house showcased the property's best features. The kitchen is updated and the backyard is beautiful. Definitely considering this property."
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef13"
+            },
+            "External_ID__c": "PFR-000013",
+            "Name": "PFR-000013",
+            "Property__c": "@Property__cRef3",
+            "Rating__c": 4.1,
+            "Source__c": "Showing",
+            "Comments__c": "Visited for a showing and was impressed by the overall condition of the property. The neighborhood is quiet and the property feels very homely."
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef14"
+            },
+            "External_ID__c": "PFR-000012",
+            "Name": "PFR-000012",
+            "Property__c": "@Property__cRef3",
+            "Rating__c": 4.3,
+            "Source__c": "Open House",
+            "Comments__c": "Attended the open house and loved the spacious layout. The backyard is perfect for outdoor activities. Considering making an offer."
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef15"
+            },
+            "External_ID__c": "PFR-000011",
+            "Name": "PFR-000011",
+            "Property__c": "@Property__cRef3",
+            "Rating__c": 4.2,
+            "Source__c": "Website",
+            "Comments__c": "Found this property online and was impressed by the photos. The description provided comprehensive details about the property. It seems like a great place to live."
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef16"
+            },
+            "External_ID__c": "PFR-000020",
+            "Name": "PFR-000020",
+            "Property__c": "@Property__cRef4",
+            "Rating__c": 3,
+            "Source__c": "Website",
+            "Comments__c": "Came across this property online and was disappointed upon viewing. The photos are misleading, and the property needs extensive repairs."
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef17"
+            },
+            "External_ID__c": "PFR-000019",
+            "Name": "PFR-000019",
+            "Property__c": "@Property__cRef4",
+            "Rating__c": 2,
+            "Source__c": "Showing",
+            "Comments__c": "Visited for a showing and was appalled by the state of the property. It's filthy and smells musty. Would not recommend."
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef18"
+            },
+            "External_ID__c": "PFR-000018",
+            "Name": "PFR-000018",
+            "Property__c": "@Property__cRef4",
+            "Rating__c": 1.5,
+            "Source__c": "Open House",
+            "Comments__c": "The open house was a disaster. The property is in terrible condition, with visible damage throughout. Waste of time."
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef19"
+            },
+            "External_ID__c": "PFR-000017",
+            "Name": "PFR-000017",
+            "Property__c": "@Property__cRef4",
+            "Rating__c": 4.8,
+            "Source__c": "Website",
+            "Comments__c": "Found this property listed on the website. The photos are stunning and the description provided all the necessary details. It's even better in person!"
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef20"
+            },
+            "External_ID__c": "PFR-000016",
+            "Name": "PFR-000016",
+            "Property__c": "@Property__cRef4",
+            "Rating__c": 4.7,
+            "Source__c": "Open House",
+            "Comments__c": "Attended the open house and fell in love with the property's charm. The kitchen is beautifully renovated, and the backyard is perfect for entertaining. Can't wait to move in!"
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef21"
+            },
+            "External_ID__c": "PFR-000025",
+            "Name": "PFR-000025",
+            "Property__c": "@Property__cRef5",
+            "Rating__c": 3.7,
+            "Source__c": "Open House",
+            "Comments__c": "The open house provided a good overview of the property. It has potential, but it needs some updates to compete with other listings in the area."
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef22"
+            },
+            "External_ID__c": "PFR-000024",
+            "Name": "PFR-000024",
+            "Property__c": "@Property__cRef5",
+            "Rating__c": 3.4,
+            "Source__c": "Showing",
+            "Comments__c": "Visited for a showing and the property feels a bit cramped. The neighborhood seems nice though, which is a plus."
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef23"
+            },
+            "External_ID__c": "PFR-000023",
+            "Name": "PFR-000023",
+            "Property__c": "@Property__cRef5",
+            "Rating__c": 3.8,
+            "Source__c": "Website",
+            "Comments__c": "Found this property online. The photos are alright, but the property seems smaller in person. It might need some renovations to make it more appealing."
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef24"
+            },
+            "External_ID__c": "PFR-000022",
+            "Name": "PFR-000022",
+            "Property__c": "@Property__cRef5",
+            "Rating__c": 3.2,
+            "Source__c": "Open House",
+            "Comments__c": "Attended the open house and was somewhat disappointed by the property's condition. It needs updating, but the potential is there."
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef25"
+            },
+            "External_ID__c": "PFR-000021",
+            "Name": "PFR-000021",
+            "Property__c": "@Property__cRef5",
+            "Rating__c": 3.5,
+            "Source__c": "Showing",
+            "Comments__c": "Visited for a showing and found the property to be adequate. It lacks some modern features, but the location is convenient."
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef26"
+            },
+            "External_ID__c": "PFR-000030",
+            "Name": "PFR-000030",
+            "Property__c": "@Property__cRef6",
+            "Rating__c": 2.5,
+            "Source__c": "Showing",
+            "Comments__c": "Visited for a showing and the property feels neglected. There are signs of water damage and mold. Would not recommend."
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef27"
+            },
+            "External_ID__c": "PFR-000029",
+            "Name": "PFR-000029",
+            "Property__c": "@Property__cRef6",
+            "Rating__c": 4.3,
+            "Source__c": "Open House",
+            "Comments__c": "The open house showcased the property's best features. The interior design is modern and the outdoor space is well-maintained. Seriously considering this property."
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef28"
+            },
+            "External_ID__c": "PFR-000028",
+            "Name": "PFR-000028",
+            "Property__c": "@Property__cRef6",
+            "Rating__c": 1.8,
+            "Source__c": "Showing",
+            "Comments__c": "Visited for a showing and was shocked by the state of the property. It's dirty and poorly maintained. Definitely not what was expected."
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef29"
+            },
+            "External_ID__c": "PFR-000027",
+            "Name": "PFR-000027",
+            "Property__c": "@Property__cRef6",
+            "Rating__c": 4.2,
+            "Source__c": "Open House",
+            "Comments__c": "Attended the open house and was impressed by the property's layout. The kitchen is spacious and the backyard is inviting. Considering making an offer."
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef30"
+            },
+            "External_ID__c": "PFR-000026",
+            "Name": "PFR-000026",
+            "Property__c": "@Property__cRef6",
+            "Rating__c": 4,
+            "Source__c": "Website",
+            "Comments__c": "Found this property online and the photos caught my eye. The description provided useful information about the property. It seems like a comfortable place to live."
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef31"
+            },
+            "External_ID__c": "PFR-000035",
+            "Name": "PFR-000035",
+            "Property__c": "@Property__cRef7",
+            "Rating__c": 3,
+            "Source__c": "Website",
+            "Comments__c": "Came across this property online and was disappointed upon viewing. The photos are misleading, and the property needs extensive repairs."
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef32"
+            },
+            "External_ID__c": "PFR-000034",
+            "Name": "PFR-000034",
+            "Property__c": "@Property__cRef7",
+            "Rating__c": 2.5,
+            "Source__c": "Showing",
+            "Comments__c": "Visited for a showing and the property feels neglected. There are signs of water damage and mold. Would not recommend."
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef33"
+            },
+            "External_ID__c": "PFR-000033",
+            "Name": "PFR-000033",
+            "Property__c": "@Property__cRef7",
+            "Rating__c": 2,
+            "Source__c": "Open House",
+            "Comments__c": "The open house was a disaster. The property is in terrible condition, with visible damage throughout. Waste of time."
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef34"
+            },
+            "External_ID__c": "PFR-000032",
+            "Name": "PFR-000032",
+            "Property__c": "@Property__cRef7",
+            "Rating__c": 4.7,
+            "Source__c": "Website",
+            "Comments__c": "Found this property listed on the website. The photos are stunning and the description provided all the necessary details. It's even better in person!"
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef35"
+            },
+            "External_ID__c": "PFR-000031",
+            "Name": "PFR-000031",
+            "Property__c": "@Property__cRef7",
+            "Rating__c": 4.6,
+            "Source__c": "Open House",
+            "Comments__c": "Attended the open house and fell in love with the property's charm. The kitchen is beautifully renovated, and the backyard is perfect for entertaining. Can't wait to move in!"
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef36"
+            },
+            "External_ID__c": "PFR-000040",
+            "Name": "PFR-000040",
+            "Property__c": "@Property__cRef8",
+            "Rating__c": 3.9,
+            "Source__c": "Showing",
+            "Comments__c": "Visited for a showing and was impressed by the property's cleanliness. The neighborhood is convenient and the property feels cozy."
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef37"
+            },
+            "External_ID__c": "PFR-000039",
+            "Name": "PFR-000039",
+            "Property__c": "@Property__cRef8",
+            "Rating__c": 4.1,
+            "Source__c": "Open House",
+            "Comments__c": "The open house showcased the property's best features. The interior design is modern and the outdoor space is well-maintained. Seriously considering this property."
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef38"
+            },
+            "External_ID__c": "PFR-000038",
+            "Name": "PFR-000038",
+            "Property__c": "@Property__cRef8",
+            "Rating__c": 3.8,
+            "Source__c": "Showing",
+            "Comments__c": "Visited for a showing and found the property to be decent. It lacks some modern features, but the neighborhood seems quiet."
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef39"
+            },
+            "External_ID__c": "PFR-000037",
+            "Name": "PFR-000037",
+            "Property__c": "@Property__cRef8",
+            "Rating__c": 3.9,
+            "Source__c": "Open House",
+            "Comments__c": "Attended the open house and was impressed by the property's layout. The kitchen is spacious and the backyard is inviting. Considering making an offer."
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef40"
+            },
+            "External_ID__c": "PFR-000036",
+            "Name": "PFR-000036",
+            "Property__c": "@Property__cRef8",
+            "Rating__c": 4,
+            "Source__c": "Website",
+            "Comments__c": "Found this property online and the photos caught my eye. The description provided useful information about the property. It seems like a comfortable place to live."
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef41"
+            },
+            "External_ID__c": "PFR-000045",
+            "Name": "PFR-000045",
+            "Property__c": "@Property__cRef9",
+            "Rating__c": 3,
+            "Source__c": "Website",
+            "Comments__c": "Came across this property online and was disappointed upon viewing. The photos are misleading, and the property needs extensive repairs."
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef42"
+            },
+            "External_ID__c": "PFR-000044",
+            "Name": "PFR-000044",
+            "Property__c": "@Property__cRef9",
+            "Rating__c": 2,
+            "Source__c": "Showing",
+            "Comments__c": "Visited for a showing and was appalled by the state of the property. It's filthy and smells musty. Would not recommend."
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef43"
+            },
+            "External_ID__c": "PFR-000043",
+            "Name": "PFR-000043",
+            "Property__c": "@Property__cRef9",
+            "Rating__c": 1.5,
+            "Source__c": "Open House",
+            "Comments__c": "The open house was a disaster. The property is in terrible condition, with visible damage throughout. Waste of time."
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef44"
+            },
+            "External_ID__c": "PFR-000042",
+            "Name": "PFR-000042",
+            "Property__c": "@Property__cRef9",
+            "Rating__c": 4.5,
+            "Source__c": "Website",
+            "Comments__c": "Found this property listed on the website. The photos are stunning and the description provided all the necessary details. It's even better in person!"
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef45"
+            },
+            "External_ID__c": "PFR-000041",
+            "Name": "PFR-000041",
+            "Property__c": "@Property__cRef9",
+            "Rating__c": 4.3,
+            "Source__c": "Open House",
+            "Comments__c": "Attended the open house and fell in love with the property's charm. The kitchen is beautifully renovated, and the backyard is perfect for entertaining. Can't wait to move in!"
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef46"
+            },
+            "External_ID__c": "PFR-000050",
+            "Name": "PFR-000050",
+            "Property__c": "@Property__cRef10",
+            "Rating__c": 3,
+            "Source__c": "Website",
+            "Comments__c": "Came across this property online and was disappointed upon viewing. The photos are misleading, and the property needs extensive repairs."
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef47"
+            },
+            "External_ID__c": "PFR-000049",
+            "Name": "PFR-000049",
+            "Property__c": "@Property__cRef10",
+            "Rating__c": 2,
+            "Source__c": "Showing",
+            "Comments__c": "Visited for a showing and was appalled by the state of the property. It's filthy and smells musty. Would not recommend."
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef48"
+            },
+            "External_ID__c": "PFR-000048",
+            "Name": "PFR-000048",
+            "Property__c": "@Property__cRef10",
+            "Rating__c": 1.5,
+            "Source__c": "Open House",
+            "Comments__c": "The open house was a disaster. The property is in terrible condition, with visible damage throughout. Waste of time."
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef49"
+            },
+            "External_ID__c": "PFR-000047",
+            "Name": "PFR-000047",
+            "Property__c": "@Property__cRef10",
+            "Rating__c": 4.9,
+            "Source__c": "Website",
+            "Comments__c": "Found this property listed on the website. The photos are stunning and the description provided all the necessary details. It's even better in person!"
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef50"
+            },
+            "External_ID__c": "PFR-000046",
+            "Name": "PFR-000046",
+            "Property__c": "@Property__cRef10",
+            "Rating__c": 4.8,
+            "Source__c": "Open House",
+            "Comments__c": "Attended the open house and fell in love with the property's charm. The kitchen is beautifully renovated, and the backyard is perfect for entertaining. Can't wait to move in!"
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef51"
+            },
+            "External_ID__c": "PFR-000055",
+            "Name": "PFR-000055",
+            "Property__c": "@Property__cRef11",
+            "Rating__c": 3,
+            "Source__c": "Website",
+            "Comments__c": "Came across this property online and was disappointed upon viewing. The photos are misleading, and the property needs extensive repairs."
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef52"
+            },
+            "External_ID__c": "PFR-000054",
+            "Name": "PFR-000054",
+            "Property__c": "@Property__cRef11",
+            "Rating__c": 2,
+            "Source__c": "Showing",
+            "Comments__c": "Visited for a showing and was appalled by the state of the property. It's filthy and smells musty. Would not recommend."
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef53"
+            },
+            "External_ID__c": "PFR-000053",
+            "Name": "PFR-000053",
+            "Property__c": "@Property__cRef11",
+            "Rating__c": 1.5,
+            "Source__c": "Open House",
+            "Comments__c": "The open house was a disaster. The property is in terrible condition, with visible damage throughout. Waste of time."
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef54"
+            },
+            "External_ID__c": "PFR-000052",
+            "Name": "PFR-000052",
+            "Property__c": "@Property__cRef11",
+            "Rating__c": 3.8,
+            "Source__c": "Website",
+            "Comments__c": "Found this property listed on the website. The photos are stunning and the description provided all the necessary details. It's even better in person!"
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef55"
+            },
+            "External_ID__c": "PFR-000051",
+            "Name": "PFR-000051",
+            "Property__c": "@Property__cRef11",
+            "Rating__c": 3.5,
+            "Source__c": "Open House",
+            "Comments__c": "Attended the open house and fell in love with the property's charm. The kitchen is beautifully renovated, and the backyard is perfect for entertaining. Can't wait to move in!"
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef56"
+            },
+            "External_ID__c": "PFR-000060",
+            "Name": "PFR-000060",
+            "Property__c": "@Property__cRef12",
+            "Rating__c": 3,
+            "Source__c": "Website",
+            "Comments__c": "Came across this property online and was disappointed upon viewing. The photos are misleading, and the property needs extensive repairs."
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef57"
+            },
+            "External_ID__c": "PFR-000059",
+            "Name": "PFR-000059",
+            "Property__c": "@Property__cRef12",
+            "Rating__c": 2,
+            "Source__c": "Showing",
+            "Comments__c": "Visited for a showing and was appalled by the state of the property. It's filthy and smells musty. Would not recommend."
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef58"
+            },
+            "External_ID__c": "PFR-000058",
+            "Name": "PFR-000058",
+            "Property__c": "@Property__cRef12",
+            "Rating__c": 1.5,
+            "Source__c": "Open House",
+            "Comments__c": "The open house was a disaster. The property is in terrible condition, with visible damage throughout. Waste of time."
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef59"
+            },
+            "External_ID__c": "PFR-000057",
+            "Name": "PFR-000057",
+            "Property__c": "@Property__cRef12",
+            "Rating__c": 4.6,
+            "Source__c": "Website",
+            "Comments__c": "Found this property listed on the website. The photos are stunning and the description provided all the necessary details. It's even better in person!"
+        },
+        {
+            "attributes": {
+                "type": "Property_Feedback__c",
+                "referenceId": "Property_Feedback__cRef60"
+            },
+            "External_ID__c": "PFR-000056",
+            "Name": "PFR-000056",
+            "Property__c": "@Property__cRef12",
+            "Rating__c": 4.4,
+            "Source__c": "Open House",
+            "Comments__c": "Attended the open house and fell in love with the property's charm. The kitchen is beautifully renovated, and the backyard is perfect for entertaining. Can't wait to move in!"
+        }
+    ]
+}
