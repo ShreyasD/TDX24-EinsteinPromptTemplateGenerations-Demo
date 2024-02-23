@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
-    <activeVersion>4</activeVersion>
+    <activeVersion>5</activeVersion>
     <description>Summarize property feedback.</description>
     <developerName>Dreamhouse_Summarize_Property_Feedback</developerName>
     <masterLabel>Dreamhouse Summarize Property Feedback</masterLabel>
@@ -250,6 +250,68 @@ For the PropertyId use {!$Input:Property.Id}, take an average of the rating for 
             <referenceName>RelatedList:Property.Property_Feedback__r.Records</referenceName>
         </templateDataProviders>
         <versionNumber>4</versionNumber>
+    </templateVersions>
+    <templateVersions>
+        <content>You are a Data scientist. Summarize the feedback for {!$Input:Property.Name} below. 
+
+{!$RelatedList:Property.Property_Feedback__r.Records}
+
+Use the below Instructions:
+
+Assign AIGeneratedSentiment to positive, negative or neutral.
+
+Examples of positive reviews:
+Rating__c=4.8, Source__c=&quot;Open House&quot;, Comments__c=&quot;Attended the open house and fell in love with the property&apos;s charm. The kitchen is beautifully renovated, and the backyard is perfect for entertaining. Can&apos;t wait to move in!&quot;
+Rating__c=4.6, Source__c=&quot;Website&quot;, Comments__c=&quot;Found this property listed on the website. The photos are stunning and the description provided all the necessary details. It&apos;s even better in person!&quot;
+Rating__c=4.3, Source__c=&quot;Showing&quot;,Comments__c=&quot;Visited for a showing and was pleasantly surprised by the spacious layout. The backyard is perfect for entertaining. Overall, a great find!&quot;
+
+Examples of negative reviews:
+Rating__c=1.5, Source__c=&quot;Open House&quot;, Comments__c=&quot;The open house was a disaster. The property is in terrible condition, with visible damage throughout. Waste of time.&quot;
+Rating__c=1.8, Source__c=&quot;Showing&quot;, Comments__c=&quot;Visited for a showing and was shocked by the state of the property. It&apos;s dirty and poorly maintained. Definitely not what was expected.&quot;
+
+Examples of neutral reviews:
+Rating__c=3.8, Source__c=&quot;Showing&quot;, Comments__c=&quot;Visited for a showing and found the property to be decent. It lacks some modern features, but the neighbourhood seems quiet.&quot;
+Rating__c=3.2, Source__c=&quot;Open House&quot;, Comments__c=&quot;Attended the open house and was somewhat disappointed by the property&apos;s condition. It needs updating, but the potential is there.&quot;
+
+Provide AIGeneratedRecommendation as steps for owner, sales agent or broker to increase showings. 
+
+For the PropertyId use {!$Input:Property.Id}, take an average of the rating for all property feedback records and return in the Rating attribute in below JSON.Use one decimal place. Make sure AIGeneratedSentiment is positive, neutral or negative only. Make sure the response is strict JSON.
+
+Here is the example JSON output:
+{
+“AIGeneratedFeedback”: &quot;&quot;,
+&quot;AIGeneratedRecommendation&quot;: &quot;&quot;
+&quot;AIGeneratedSentiment&quot;: &quot;positive/neutral/negative&quot;,
+&quot;Rating&quot;: &quot;&quot;
+&quot;PropertyId&quot;: &quot;&quot;
+}
+</content>
+        <inputs>
+            <apiName>Property</apiName>
+            <definition>SOBJECT://Property__c</definition>
+            <masterLabel>Property</masterLabel>
+            <referenceName>Input:Property</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getRelatedList</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>parentRecordId</parameterName>
+                <valueExpression>{!$Input:Property.Id}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>relatedListName</parameterName>
+                <valueExpression>Property_Feedback__r</valueExpression>
+            </parameters>
+            <referenceName>RelatedList:Property.Property_Feedback__r.Records</referenceName>
+        </templateDataProviders>
+        <versionNumber>5</versionNumber>
     </templateVersions>
     <type>einstein_gpt__flex</type>
     <visibility>Global</visibility>
