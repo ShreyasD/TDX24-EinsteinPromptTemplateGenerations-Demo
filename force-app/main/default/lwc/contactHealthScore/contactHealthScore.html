@@ -1,0 +1,24 @@
+<template>
+    <lightning-card  variant="Narrow"  title="Contact Health Score" icon-name="standard:contact">
+        <template lwc:if={error}>
+            <c-error-panel
+                friendly-message="Error generating prompt message"
+                errors={error}>
+            </c-error-panel>
+        </template>
+        <template lwc:elseif={healthScore}>
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col slds-size_3-of-12">
+                    <span class="slds-align_absolute-center" lwc:ref="healthScoreSpan">{healthScore}</span>
+                </div>
+                <div class="slds-col slds-size_9-of-12">
+                    <lightning-formatted-text class="slds-align_absolute-center" value={reason}></lightning-formatted-text>
+                </div>
+            </div>
+        </template>
+        <template lwc:else>
+            <lightning-spinner alternative-text="Loading..." size="small">
+            </lightning-spinner>
+        </template>
+    </lightning-card>
+</template>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
-    <activeVersion>1</activeVersion>
+    <activeVersion>6</activeVersion>
     <description>Calculates the health score based on Client Interactions and Case History.</description>
     <developerName>Dreamhouse_Contact_Health_Score_Summary</developerName>
     <masterLabel>Dreamhouse Contact Health Score Summary</masterLabel>
@@ -26,6 +26,154 @@ Based on the client details provided above, provide a client health score from 1
             <referenceName>Input:Contact</referenceName>
             <required>true</required>
         </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>flow://null</definition>
+            <parameters>
+                <definition>SOBJECT://Contact</definition>
+                <isRequired>true</isRequired>
+                <parameterName>Contact</parameterName>
+                <valueExpression>{!$Input:Contact}</valueExpression>
+            </parameters>
+            <referenceName>Flow:Dreamhouse_Contact_Interaction_Summary</referenceName>
+        </templateDataProviders>
+        <versionNumber>1</versionNumber>
+    </templateVersions>
+    <templateVersions>
+        <content>You are an Account Executive tasked with providing a high level overview of a client&apos;s interactions with our company based on the information provided below:
+
+&quot;&quot;&quot;
+Client Details:
+{!$Flow:Dreamhouse_Contact_Interaction_Summary.Prompt}
+&quot;&quot;&quot;
+
+Based on the client details provided above, provide a client health score from 1-10 for the Contact, where 10 is highly satisfied and 1 is not satisfied at all. Also provide a high level reason for the score in the format below.
+
+{
+  healthScore: &quot;health score&quot;
+  reason: &quot;reason&quot;
+}
+</content>
+        <inputs>
+            <apiName>Contact</apiName>
+            <definition>SOBJECT://Contact</definition>
+            <masterLabel>Contact</masterLabel>
+            <referenceName>Input:Contact</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>flow://null</definition>
+            <parameters>
+                <definition>SOBJECT://Contact</definition>
+                <isRequired>true</isRequired>
+                <parameterName>Contact</parameterName>
+                <valueExpression>{!$Input:Contact}</valueExpression>
+            </parameters>
+            <referenceName>Flow:Dreamhouse_Contact_Interaction_Summary</referenceName>
+        </templateDataProviders>
+        <versionNumber>2</versionNumber>
+    </templateVersions>
+    <templateVersions>
+        <content>You are an Account Executive tasked with providing a high level overview of a client&apos;s interactions with our company based on the information provided below:
+
+&quot;&quot;&quot;
+Client Details:
+{!$Flow:Dreamhouse_Contact_Interaction_Summary.Prompt}
+&quot;&quot;&quot;
+
+Based on the client details provided above, provide a client health score from 1-10 for the Contact, where 10 is highly satisfied and 1 is not satisfied at all. Also provide a high level reason for the score in the format below.
+
+{
+  healthScore: &quot;health score&quot;
+  reason: &quot;reason&quot;
+}
+</content>
+        <inputs>
+            <apiName>Contact</apiName>
+            <definition>SOBJECT://Contact</definition>
+            <masterLabel>Contact</masterLabel>
+            <referenceName>Input:Contact</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT35Turbo</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>flow://null</definition>
+            <parameters>
+                <definition>SOBJECT://Contact</definition>
+                <isRequired>true</isRequired>
+                <parameterName>Contact</parameterName>
+                <valueExpression>{!$Input:Contact}</valueExpression>
+            </parameters>
+            <referenceName>Flow:Dreamhouse_Contact_Interaction_Summary</referenceName>
+        </templateDataProviders>
+        <versionNumber>3</versionNumber>
+    </templateVersions>
+    <templateVersions>
+        <content>You are an Account Executive tasked with providing a high level overview of a client&apos;s interactions with our company based on the information provided below:
+
+Client Details:
+{!$Flow:Dreamhouse_Contact_Interaction_Summary.Prompt}
+
+Instructions:
+&quot;&quot;&quot;
+Based on the client details provided above, provide a client health score from 1-10 for the Contact, where 10 is highly satisfied and 1 is not satisfied at all. Also provide a high level reason for the score in the format below.
+
+Use the following format strictly:
+{
+  healthScore: &quot;health score&quot;
+  reason: &quot;reason&quot;
+}
+&quot;&quot;&quot;
+</content>
+        <inputs>
+            <apiName>Contact</apiName>
+            <definition>SOBJECT://Contact</definition>
+            <masterLabel>Contact</masterLabel>
+            <referenceName>Input:Contact</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT35Turbo</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>flow://null</definition>
+            <parameters>
+                <definition>SOBJECT://Contact</definition>
+                <isRequired>true</isRequired>
+                <parameterName>Contact</parameterName>
+                <valueExpression>{!$Input:Contact}</valueExpression>
+            </parameters>
+            <referenceName>Flow:Dreamhouse_Contact_Interaction_Summary</referenceName>
+        </templateDataProviders>
+        <versionNumber>4</versionNumber>
+    </templateVersions>
+    <templateVersions>
+        <content>You are an Account Executive tasked with providing a high level overview of a client&apos;s interactions with our company based on the information provided below:
+
+Client Details:
+{!$Flow:Dreamhouse_Contact_Interaction_Summary.Prompt}
+
+Instructions:
+&quot;&quot;&quot;
+Based on the client details provided above, provide a client health score from 1-10 for the Contact, where 10 is highly satisfied and 1 is not satisfied at all. Also provide a high level reason for the score in the format below.
+
+Use the following format strictly:
+{
+  healthScore: &quot;health score&quot;
+  reason: &quot;reason&quot;
+}
+&quot;&quot;&quot;
+</content>
+        <inputs>
+            <apiName>Contact</apiName>
+            <definition>SOBJECT://Contact</definition>
+            <masterLabel>Contact</masterLabel>
+            <referenceName>Input:Contact</referenceName>
+            <required>true</required>
+        </inputs>
         <primaryModel>sfdc_ai__DefaultOpenAIGPT35Turbo</primaryModel>
         <status>Published</status>
         <templateDataProviders>
@@ -38,7 +186,45 @@ Based on the client details provided above, provide a client health score from 1
             </parameters>
             <referenceName>Flow:Dreamhouse_Contact_Interaction_Summary</referenceName>
         </templateDataProviders>
-        <versionNumber>1</versionNumber>
+        <versionNumber>5</versionNumber>
+    </templateVersions>
+    <templateVersions>
+        <content>You are an Account Executive tasked with providing a high level overview of a client&apos;s interactions with our company based on the information provided below:
+
+Client Details:
+{!$Flow:Dreamhouse_Contact_Interaction_Summary.Prompt}
+
+Instructions:
+&quot;&quot;&quot;
+Based on the client details provided above, provide a client health score from 1-10 for the Contact, where 10 is highly satisfied and 1 is not satisfied at all. Also provide a high level reason for the score in the format below.
+
+Use the following format strictly:
+{
+  healthScore: &quot;health score&quot;
+  reason: &quot;reason&quot;
+}
+&quot;&quot;&quot;
+</content>
+        <inputs>
+            <apiName>Contact</apiName>
+            <definition>SOBJECT://Contact</definition>
+            <masterLabel>Contact</masterLabel>
+            <referenceName>Input:Contact</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT35Turbo_16k</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>flow://Dreamhouse_Contact_Interaction_Summary</definition>
+            <parameters>
+                <definition>SOBJECT://Contact</definition>
+                <isRequired>true</isRequired>
+                <parameterName>Contact</parameterName>
+                <valueExpression>{!$Input:Contact}</valueExpression>
+            </parameters>
+            <referenceName>Flow:Dreamhouse_Contact_Interaction_Summary</referenceName>
+        </templateDataProviders>
+        <versionNumber>6</versionNumber>
     </templateVersions>
     <type>einstein_gpt__flex</type>
     <visibility>Global</visibility>
