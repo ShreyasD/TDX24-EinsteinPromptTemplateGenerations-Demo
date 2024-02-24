@@ -9,7 +9,7 @@
         <template lwc:elseif={healthScore}>
             <div class="slds-grid slds-gutters">
                 <div class="slds-col slds-size_3-of-12">
-                    <span class="slds-align_absolute-center" lwc:ref="healthScoreSpan">{healthScore}</span>
+                    <span class={healthScoreClassList} lwc:ref="healthScoreSpan">{healthScore}</span>
                 </div>
                 <div class="slds-col slds-size_9-of-12">
                     <lightning-formatted-text class="slds-align_absolute-center" value={reason}></lightning-formatted-text>

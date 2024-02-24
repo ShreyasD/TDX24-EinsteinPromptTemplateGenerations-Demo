@@ -1,4 +1,4 @@
-import { LightningElement, api } from 'lwc';
+import { LightningElement, api, track } from 'lwc';
 
 import generateMessageFromPromptTemplate from '@salesforce/apex/EinsteinGenAIGatewayService.generateMessageFromPromptTemplate';
 
@@ -8,6 +8,7 @@ export default class ContactHealthScore extends LightningElement {
 
     healthScore;
     reason;
+    @track healthScoreClassList = "slds-align_absolute-center";
 
     connectedCallback() {
         console.log('ContactHealthScore->connectedCallback');
@@ -32,10 +33,14 @@ export default class ContactHealthScore extends LightningElement {
                     this.reason = response.reason;
 
                     //Change class based on score
-                    let healthScoreSpan = this.refs.healthScoreSpan;
-                    if(this.healthScore < 4) healthScoreSpan.classList.add(".low-score");
-                    else if (this.healthScore >= 4 && this.healthScore <= 7) healthScoreSpan.classList.add(".medium-score");
-                    else healthScoreSpan.classList.add(".high-score");
+                    // let healthScoreSpan = this.refs.healthScoreSpan;
+                    // if(this.healthScore < 4) healthScoreSpan.classList.add('low-score');
+                    // else if (this.healthScore >= 4 && this.healthScore <= 7) healthScoreSpan.classList.add('medium-score');
+                    // else healthScoreSpan.classList.add('high-score');
+
+                    if(this.healthScore < 4) this.healthScoreClassList += " low-score";
+                    else if (this.healthScore >= 4 && this.healthScore <= 7) this.healthScoreClassList += " medium-score";
+                    else this.healthScoreClassList += " high-score";
                 } else {
                     this.error = {
                         message: "Generated message doesn't meet safety threshold. Please try again ..."
