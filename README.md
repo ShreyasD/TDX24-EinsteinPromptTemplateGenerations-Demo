@@ -1,17 +1,18 @@
-# Resources
+# Salesforce DX Project: Next Steps
 
-Trust Layer
-* [Blog: Inside the Einstein Trust Layer](https://developer.salesforce.com/blogs/2023/10/inside-the-einstein-trust-layer)
-* [Youtube: Inside the Einstein Trust Layer](https://www.youtube.com/watch?v=JYWBnPEtkoc)
+Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
 
-Prompt Builder
-* [Blog post: The Ultimate Guide to Prompt Builder](https://admin.salesforce.com/blog/2024/the-ultimate-guide-to-prompt-builder-spring-24)
-* [Trailhead: Get Started with Prompts and Prompt Builder](http://sforce.co/PromptBuilderTH)
-* [Dreamforce 2023 Developer Keynote: The Future of Development](https://www.youtube.com/watch?v=KmaNLOyytlY)
-* [Chapter 4: Einstein Gen AI Platform Features | Spring '24 Developer Preview: Release Readiness Live](https://www.salesforce.com/plus/experience/release_readiness_live/series/release_readiness_live_spring_24)
+## How Do You Plan to Deploy Your Changes?
 
-Connect API
-* [Connect REST API Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.chatterapi.meta/chatterapi/intro_what_is_chatter_connect.htm)
-* [Deep Dive into Salesforce Connected App - Part 1](https://www.youtube.com/watch?v=-9pe0OQi7LA)
-* [Deep Dive into Salesforce Connected App - Part 2](https://www.youtube.com/watch?v=OPOLjnxeuF4)
+Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
 
+## Configure Your Salesforce DX Project
+
+The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+
+## Read All About It
+
+- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
+- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
+- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
+- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
