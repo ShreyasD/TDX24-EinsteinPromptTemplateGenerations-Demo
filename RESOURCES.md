@@ -1,5 +1,8 @@
 # Resources
 
+Github
+* [Github Repo](https://github.com/ShreyasD/TDX24-EinsteinPromptTemplateGenerations-Demo)
+
 Trust Layer
 * [Blog: Inside the Einstein Trust Layer](https://developer.salesforce.com/blogs/2023/10/inside-the-einstein-trust-layer)
 * [Youtube: Inside the Einstein Trust Layer](https://www.youtube.com/watch?v=JYWBnPEtkoc)
