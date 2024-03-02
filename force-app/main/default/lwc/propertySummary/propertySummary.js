@@ -13,10 +13,12 @@ import BATH_FIELD from '@salesforce/schema/Property__c.Baths__c';
 import PRICE_FIELD from '@salesforce/schema/Property__c.Price__c';
 import BROKER_FIELD from '@salesforce/schema/Property__c.Broker__c';
 import PICTURE_FIELD from '@salesforce/schema/Property__c.Picture__c';
+import DESCRIPTION_FIELD from '@salesforce/schema/Property__c.Description__c';
 
 export default class PropertySummary extends NavigationMixin(LightningElement) {
-    propertyId;
-    propertyFields = [BED_FIELD, BATH_FIELD, PRICE_FIELD, BROKER_FIELD];
+    @api propertyId;
+    @api readOnly = false;
+    propertyFields = [BED_FIELD, BATH_FIELD, PRICE_FIELD, BROKER_FIELD, DESCRIPTION_FIELD];
     subscription = null;
 
     @wire(MessageContext)
@@ -47,6 +49,14 @@ export default class PropertySummary extends NavigationMixin(LightningElement) {
 
     get pictureURL() {
         return getFieldValue(this.property.data, PICTURE_FIELD);
+    }
+
+    get mode() {
+        return this.readOnly ? "readonly" : "view"
+    }
+
+    get showRecordRedirect() {
+        return !this.readOnly;
     }
 
     connectedCallback() {

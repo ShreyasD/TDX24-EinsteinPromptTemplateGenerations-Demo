@@ -32,3 +32,9 @@
     /* @sldsValidatorIgnore */
     text-overflow: ellipsis;
 }
+
+.client-tooltip-picture {
+    position: relative;
+    width: 150px;
+    height: 30px;
+}

@@ -4,5 +4,7 @@ export default class PropertySendListingsModalDetails extends LightningElement {
     @api properties;
     @api clientId;
 
-    //TODO add client to propertylistmap
+    connectedCallback() {
+        console.log('PropertySendListingsModalDetails->clientId: ' + this.clientId);
+    }
 }

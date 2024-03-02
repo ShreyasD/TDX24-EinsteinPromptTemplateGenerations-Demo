@@ -8,16 +8,15 @@
                 <template
                     for:each={properties}
                     for:item="property">
-                    <c-property-tile
-                        property={property}
+                    <c-property-summary
                         key={property.Id}
-                        onselected={handlePropertySelected}
-                        class="slds-col slds-var-m-around_xx-small"
-                        data-id={property.Id}
-                    ></c-property-tile>
+                        property-id={property.Id}
+                        read-only="true"
+                        class="slds-col slds-size_1-of-3">
+                    </c-property-summary>
                 </template>
             </div>
-            <c-property-list-map properties={properties} lwc:ref="propertyMap"></c-property-list-map>
+            <c-property-list-map client-id={clientId} properties={properties} lwc:ref="propertyMap"></c-property-list-map>
         </template>
     </lightning-card>
 </template>

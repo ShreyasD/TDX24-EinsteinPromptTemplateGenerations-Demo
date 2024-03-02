@@ -2,13 +2,15 @@
     <lightning-card icon-name="custom:custom85">
         <template lwc:if={property.data}>
             <span slot="title">{propertyName}</span>
-            <lightning-button-icon
-                icon-name="utility:expand_alt"
-                slot="actions"
-                onclick={handleNavigateToRecord}
-            >
-                <label>Navigate to Record</label>
-            </lightning-button-icon>
+            <template lwc:if={showRecordRedirect}>
+                <lightning-button-icon
+                    icon-name="utility:expand_alt"
+                    slot="actions"
+                    onclick={handleNavigateToRecord}
+                >
+                    <label>Navigate to Record</label>
+                </lightning-button-icon>
+            </template>
             <div class="slds-var-m-horizontal_medium">
                 <img
                     src={pictureURL}
@@ -20,6 +22,7 @@
                     record-id={propertyId}
                     fields={propertyFields}
                     columns="2"
+                    mode={mode}
                 >
                 </lightning-record-form>
             </div>
