@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <assignments>
+        <name>Add_Contact_Details</name>
+        <elementSubtype>AddPromptInstructions</elementSubtype>
+        <label>Add Contact Details</label>
+        <locationX>176</locationX>
+        <locationY>242</locationY>
+        <assignmentItems>
+            <assignToReference>$Output.Prompt</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>Contact Name:{!Get_Contact.Name}
+Contact Email: {!Get_Contact.Email}
+Contact Phone: {!Get_Contact.Phone}
+</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Get_Events</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Case_Comment_Details</name>
+        <elementSubtype>AddPromptInstructions</elementSubtype>
+        <label>Case Comment Details</label>
+        <locationX>440</locationX>
+        <locationY>1706</locationY>
+        <assignmentItems>
+            <assignToReference>$Output.Prompt</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>Parent Case: {!Loop_Case_Comments.ParentId}
+Comment Body:{!Loop_Case_Comments.CommentBody}
+Comment Date: {!Loop_Case_Comments.CreatedDate}
+</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Case_Comments</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Case_Detail</name>
+        <elementSubtype>AddPromptInstructions</elementSubtype>
+        <label>Case Detail</label>
+        <locationX>352</locationX>
+        <locationY>1382</locationY>
+        <assignmentItems>
+            <assignToReference>$Output.Prompt</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>Case Subject: {!Loop_Cases.Subject}
+Case Description:{!Loop_Cases.Description}
+Case Status:{!Loop_Cases.Status}
+Case Reason:{!Loop_Cases.Reason}
+Case Opened:{!Loop_Cases.CreatedDate}
+</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Get_Case_Comments</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Case_Feed_Detail</name>
+        <elementSubtype>AddPromptInstructions</elementSubtype>
+        <label>Case Feed Detail</label>
+        <locationX>440</locationX>
+        <locationY>2114</locationY>
+        <assignmentItems>
+            <assignToReference>$Output.Prompt</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>Parent Case: {!Loop_Case_Feed.ParentId}
+Item Body: {!Loop_Case_Feed.Body}
+Item Title: {!Loop_Case_Feed.Title}
+Item Type: {!Loop_Case_Feed.Type}
+Created Date: {!Loop_Case_Feed.CreatedDate}
+</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Case_Feed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Add event detail to prompt.</description>
+        <name>Event_Detail</name>
+        <elementSubtype>AddPromptInstructions</elementSubtype>
+        <label>Event Detail</label>
+        <locationX>264</locationX>
+        <locationY>566</locationY>
+        <assignmentItems>
+            <assignToReference>$Output.Prompt</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>Subject: {!Loop_Events.Subject}
+Description:{!Loop_Events.Description}
+Type:{!Loop_Events.EventSubtype}
+Date:{!Loop_Events.ActivityDate}
+</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Events</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Task_Detail</name>
+        <elementSubtype>AddPromptInstructions</elementSubtype>
+        <label>Task Detail</label>
+        <locationX>264</locationX>
+        <locationY>974</locationY>
+        <assignmentItems>
+            <assignToReference>$Output.Prompt</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>Subject:{!Loop_Tasks.Subject}
+Description:{!Loop_Tasks.Description}
+Call Type:{!Loop_Tasks.CallType}
+Task Type:{!Loop_Tasks.TaskSubtype}
+Date: {!Loop_Tasks.ActivityDate}
+</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Tasks</targetReference>
+        </connector>
+    </assignments>
+    <description>Flow summarizes Contact, Activity and Cases.</description>
+    <environments>Default</environments>
+    <interviewLabel>Dreamhouse {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Dreamhouse Contact Interaction Summary</label>
+    <loops>
+        <name>Loop_Case_Comments</name>
+        <label>Loop Case Comments</label>
+        <locationX>352</locationX>
+        <locationY>1598</locationY>
+        <collectionReference>Get_Case_Comments</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Case_Comment_Details</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Get_Case_Feed</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <name>Loop_Case_Feed</name>
+        <label>Loop Case Feed</label>
+        <locationX>352</locationX>
+        <locationY>2006</locationY>
+        <collectionReference>Get_Case_Feed</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Case_Feed_Detail</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Loop_Cases</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <name>Loop_Cases</name>
+        <label>Loop Cases</label>
+        <locationX>176</locationX>
+        <locationY>1274</locationY>
+        <collectionReference>Get_Cases</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Case_Detail</targetReference>
+        </nextValueConnector>
+    </loops>
+    <loops>
+        <description>Loop through events and add details to prompt instructions.</description>
+        <name>Loop_Events</name>
+        <label>Loop Events</label>
+        <locationX>176</locationX>
+        <locationY>458</locationY>
+        <collectionReference>Get_Events</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Event_Detail</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Get_Tasks</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <name>Loop_Tasks</name>
+        <label>Loop Tasks</label>
+        <locationX>176</locationX>
+        <locationY>866</locationY>
+        <collectionReference>Get_Tasks</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Task_Detail</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Get_Cases</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>PromptFlow</processType>
+    <recordLookups>
+        <name>Get_Case_Comments</name>
+        <label>Get Case Comments</label>
+        <locationX>352</locationX>
+        <locationY>1490</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Loop_Case_Comments</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>ParentId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Loop_Cases.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>CaseComment</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Case_Feed</name>
+        <label>Get Case Feed</label>
+        <locationX>352</locationX>
+        <locationY>1898</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Loop_Case_Feed</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>ParentId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Loop_Cases.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>CaseFeed</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Get Cases associated with the contact.</description>
+        <name>Get_Cases</name>
+        <label>Get Cases</label>
+        <locationX>176</locationX>
+        <locationY>1166</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Loop_Cases</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>ContactId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Input.Contact.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Case</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Contact</name>
+        <label>Get Contact</label>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Add_Contact_Details</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Input.Contact.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Contact</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Activities on the client activity timeline.</description>
+        <name>Get_Events</name>
+        <label>Get Events</label>
+        <locationX>176</locationX>
+        <locationY>350</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Loop_Events</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>WhoId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Input.Contact.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Event</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Get tasks from activity timeline.</description>
+        <name>Get_Tasks</name>
+        <label>Get Tasks</label>
+        <locationX>176</locationX>
+        <locationY>758</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Loop_Tasks</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>WhoId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Input.Contact.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Task</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <capabilityTypes>
+            <name>FlexTemplate://Dreamhouse_Contact_Health_Score_Summary</name>
+            <capabilityName>FlexTemplate://Dreamhouse_Contact_Health_Score_Summary</capabilityName>
+            <inputs>
+                <name>Contact</name>
+                <capabilityInputName>Contact</capabilityInputName>
+                <dataType>SOBJECT://Contact</dataType>
+                <isCollection>false</isCollection>
+            </inputs>
+        </capabilityTypes>
+        <connector>
+            <targetReference>Get_Contact</targetReference>
+        </connector>
+        <triggerType>Capability</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>
