@@ -1,0 +1,263 @@
+{
+	"info": {
+		"_postman_id": "b579979a-7206-4002-897d-14c0ccb97930",
+		"name": "TDX24 Demo - Dreamhouse",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18743592",
+		"_collection_link": "https://bold-meadow-825261.postman.co/workspace/My-Workspace~2f59ae47-b6d5-41dc-87c1-35a9ebaa7593/collection/18743592-b579979a-7206-4002-897d-14c0ccb97930?action=share&source=collection_link&creator=18743592"
+	},
+	"item": [
+		{
+			"name": "Invoke Prompt Template",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{_accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"isPreview\": \"false\",\n    \"inputParams\": {\n        \"valueMap\": {\n            \"Input:Contact\": {\n                \"value\": {\n                    \"id\": \"003TC000001C9lJYAS\"\n                }\n            }\n        }\n    },\n    \"additionalConfig\": {\n      \"additionalParameters\": {},\n      \"applicationName\": \"PromptTemplateGenerationsInvocable\"\n    }\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/services/data/v{{version}}/einstein/prompt-templates/{{promptTemplateDevName}}/generations",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"services",
+						"data",
+						"v{{version}}",
+						"einstein",
+						"prompt-templates",
+						"{{promptTemplateDevName}}",
+						"generations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Authenticate",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const jsonData = pm.response.json();",
+							"const id = jsonData.id.split('/');",
+							"",
+							"const context = pm.environment.name ? pm.environment : pm.collectionVariables;",
+							"context.set(\"_accessToken\", jsonData.access_token);",
+							"context.set(\"_endpoint\", jsonData.instance_url);",
+							"context.set(\"_userId\", id.pop());",
+							"context.set(\"_orgId\", id.pop());",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "{{clientId}}",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "{{clientSecret}}",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "{{username}}",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "{{password}}{{secretToken}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/services/oauth2/token",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"services",
+						"oauth2",
+						"token"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Successful OAuth Username Password Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "CLIENT_ID_GOES_HERE",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "CLIENT_SECRET_GOES_HERE",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "demo@pozil.org",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "PASSWORD_AND_SECURITY_TOKEN_GO_HERE",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://login.salesforce.com/services/oauth2/token",
+							"protocol": "https",
+							"host": [
+								"login",
+								"salesforce",
+								"com"
+							],
+							"path": [
+								"services",
+								"oauth2",
+								"token"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 06 Jan 2021 14:16:55 GMT"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536002; includeSubDomains"
+						},
+						{
+							"key": "Public-Key-Pins-Report-Only",
+							"value": "pin-sha256=\"9n0izTnSRF+W4W4WhQB8duS2bxVLfzXsY=\"; pin-sha256=\"5kJvNEMw0KjrCAu7eXY5HZdvSP91w=\"; pin-sha256=\"njN4rRG+zPUPHlv4+foULwl1g=\"; max-age=86400; includeSubDomains; report-uri=\"https://a.forcesslreports.com/hpkp-report/00D58000000arpqm\";"
+						},
+						{
+							"key": "Expect-CT",
+							"value": "max-age=86400, report-uri=\"https://a.forcesslreports.com/Expect-CT-report/00D58000000arpqm\""
+						},
+						{
+							"key": "X-Robots-Tag",
+							"value": "none"
+						},
+						{
+							"key": "X-B3-TraceId",
+							"value": "c21e47e40ecc875d"
+						},
+						{
+							"key": "X-B3-SpanId",
+							"value": "c21e47e40ecc875d"
+						},
+						{
+							"key": "X-B3-Sampled",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache,must-revalidate,max-age=0,no-store,private"
+						},
+						{
+							"key": "Expires",
+							"value": "Thu, 01 Jan 1970 00:00:00 GMT"
+						},
+						{
+							"key": "X-ReadOnlyMode",
+							"value": "false"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"access_token\": \"ACCESS_TOKEN_GOES_HERE\",\n    \"instance_url\": \"https://pozil-dev-ed.my.salesforce.com\",\n    \"id\": \"https://login.salesforce.com/id/00D58000000arpqEAA/00558000000yFyDAAU\",\n    \"token_type\": \"Bearer\",\n    \"issued_at\": \"1609942615640\",\n    \"signature\": \"SIGNATURE_GOES_HERE\"\n}"
+				}
+			]
+		}
+	]
+}
